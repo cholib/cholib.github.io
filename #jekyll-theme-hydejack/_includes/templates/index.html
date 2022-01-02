@@ -1,0 +1,43 @@
+<!-- ---
+layout: blog
+--- -->
+<!-- 
+<div id="posts">
+  <h2>Blog Posts</h2>
+  <ul>
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="pages">
+  <h2>Pages</h2>
+  <ul>
+    {% for page in site.html_pages %}
+      {% if page.title %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div> -->
+<!-- 
+<div hidden>
+  {% assign strings = site.data.strings %}
+  <h2 class="sr-only">{{ strings.templates | default: "Templates"}}{{ strings.colon | default:":" }}</h2>
+
+  {% include templates/animation.html %}
+  {% include templates/loading.html %}
+  {% include templates/error.html %}
+  {% include templates/permalink.html %}
+  {% if site.hydejack.cookies_banner %}
+    {% include templates/pro/cookies-banner.html %}
+  {% endif %}
+  {% if site.hydejack.dark_mode.icon %}
+    {% include templates/pro/dark-mode.html %}
+  {% endif %}
+  {% unless site.hydejack.no_search %}
+    {% include templates/pro/search.html %}
+  {% endunless %}
+</div>
+ -->

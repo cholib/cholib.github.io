@@ -1,0 +1,5 @@
+
+ User-agent: *
+ Allow: /
+ 
+ Sitemap: https://cholib.github.io/sitemap.xml

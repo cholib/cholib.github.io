@@ -1,0 +1,124 @@
+basics:
+  name: "CHO"
+  label: "Software Engineer"
+  picture: /assets/img/me.png
+  email: "hyeonohcho@gmail.com"
+  website: "https://cholib.github.io/"
+  summary: >
+     *Hi! I'm CHO.(a.k.a 조연어)<br/> 
+     
+     Thank you for visiting My blog.<br/>
+     
+     I wish you good luck.*    
+  profiles:
+    - network: "Github"
+      username: "cholib"
+      url: "https://github.com/choilib"
+    - network: "LinkedIn"
+      username: "Hyeonoh"
+      url: "https://www.linkedin.com/in/hyeon-oh-7b014a197/"
+work:
+  - company: "MIRAE I&T"
+    position: "Assistant Manager"
+    website: http://secoauto.com/main/main.php"
+    startDate: "2020-08-10"
+    endDate: "2021-08-10"
+    summary:        
+    highlights: 
+      - "Computer room operation at SECO Group manufacturer"
+      - "ERP Development"
+      - "Legacy System maintenance"
+      - "Network Access Control"
+      - "MES/POP/PLC Control"      
+  - company: "SOTEC"
+    position: "SW Engineer"
+    website: "http://www.ssotec.com"
+    startDate: "2018-07-02"
+    endDate: "2020-08-01"
+    summary:
+    highlights:
+      - "Samsung Heavy Industries In-House Program Development"
+      - C#.Net, Ms-sql, TFS, IIS, Visual Studio, DevExpress, NeoDeex
+  - company: "CoreSystem"
+    position: "Intern"
+    website: "http://www.coresystem.co.kr/#/main/main.php"
+    startDate: "2017-12-10"
+    endDate: "2018-06-23"
+    summary:
+    highlights:
+      - "Software engineering internship at Advanced Planning and Scheduling team.(Smart Factory)"
+      - "Hyosung Heavy Industries Transformer Design Management Program Development"
+      - "Code Conversion VB to C#"
+  - company: "LS NETWORKS"
+    position: "Regular Employee"
+    website: "https://www.lsnetworks.com/html/brand/prospecsw.asp"
+    startDate: "2016-02-01"
+    endDate: "2016-10-15"
+    summary:
+    highlights:
+      - "Reverse Logistics ERP Data Management in Brand Support Division"
+      - "3rd party logistics transfer project data Management(TE LOGIS, HANJIN)"
+      - "Oracle 11g, SAP SD, WMS"
+education:
+  - institution: "ITWill Information Processing Institute, Busan "
+    startDate: "2017-02-23"
+    endDate: "2017-08-21"
+    courses:
+      - "NCS-based developer training course"
+      - "Smart Web Hybrid App Java Developer Training Course"
+  - certificate: "Data Architecture Semi-Professional (데이터아키텍처준전문가)"
+    date: "2020-10-13"
+  - certificate: "Engineer Information Processing (정보처리기사)"
+    date: "2020-08-28"
+  - certificate: "SQL Developer (SQLD)"
+    date: "2019-09-24"              
+  - certificate: "Oracle Certified Professional (OCP)"
+    date: "2017-08-28"
+skills:
+  - name: ".Net"
+    level: "Intermediate"
+    keywords:
+      - "C#"
+      - "VB"
+  - name: "DB"
+    level: "Intermediate"
+    keywords:
+      - "SQL Server"
+      - "Oracle RDBMS"
+  - name: "Algorithm"
+    level: "Junior"
+  - name: "Web Development"
+    level: "Junior"
+    keywords:
+      - "HTML5"
+      - "CSS3"
+      - "Javascript"
+      - "Bootstrap"      
+languages:
+  - language: "Korean"
+    fluency: "Native speaker"
+  - language: "English"
+    fluency: "Elementary proficiency"
+interests:
+  - name: "Activity"
+    keywords:
+      - "Weight Training"
+      - "Hiking"
+  - name: "Reading"
+    keywords:
+      - "<a href='https://www.aladin.co.kr/author/wauthor_overview.aspx?AuthorSearch=@167359' 
+          target='_blank'>
+          정이현
+         </a>"
+      - "<a href='https://www.aladin.co.kr/author/wauthor_overview.aspx?AuthorSearch=@41895'
+          target='_blank'>
+          조정래
+         </a>"
+      - "<a href='https://www.aladin.co.kr/author/wauthor_overview.aspx?AuthorSearch=@10829'
+          target='_blank'>
+          Федор Достоевский
+         </a>"
+  - name: "Gaming"
+    keywords:     
+      - "<a href='https://apps.apple.com/kr/app/rummikub/id1015322991'>Rummikub</a>"      
+
