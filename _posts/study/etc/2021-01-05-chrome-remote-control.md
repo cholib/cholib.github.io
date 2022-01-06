@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Tip] 구글 크롬 원격지원"
-category: review
+category: study
 tags: etc
 image: /assets/img/study/etc/chrome_remote_host/chrome_remote_desktop.jpg
 accent_image: 
@@ -93,11 +93,9 @@ __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answe
 
 ![complete_connection](/assets/img/study/etc/chrome_remote_host/complete_connection.PNG){:.border.lead width="1776" height="258" loading="lazy"}
 
-<br>
-
 __원거리에 계시는 가족과 친구의 PC 설정을 도와드릴 경우에 가끔 사용하게 되는데, 굉장히 편리한 것 같습니다.__🙂<br>
 
-"끝"<br>
+"끝"<br><br>
 
 [🔼TOP](#)
 
