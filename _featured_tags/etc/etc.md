@@ -1,8 +1,8 @@
 ---
-layout: tag-list
+layout: grid
 type: tag
 title: "Etc"
-category: study
+category: etc
 slug: etc
 sidebar: true
 order: 1
