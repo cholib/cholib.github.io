@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: C++
-category: programming
-slug: cpp
+title: "CSS"
+category: study
+slug: css
 sidebar: false
 order: 2
 description: >
-   C++ related posts
+   CSS related posts
 ---

@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: SQL Server
+title: "Python"
 category: programming
-slug: sqlserver
+slug: python
 sidebar: false
-order: 1
+order: 3
 description: >
-   MS-SQL related posts
+   Python related posts
 ---

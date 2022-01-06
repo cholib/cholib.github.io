@@ -6,6 +6,6 @@ slug: programming
 sidebar: false
 order: 1
 description: >
-  C#.Net, SQL 外
+  프로그래밍
 ---
         

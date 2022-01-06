@@ -23,6 +23,7 @@ last_modified_at: 2021-12-23
 <div markdown="1">
 
 <br>
+
 ![fishbowl image](/assets/img/review/hardware/2021-12-22/fishbowl.jpg){:.border.lead width="1024" height="600" loading="lazy"}
 
 2018년 가을부터 였었나,,, __데스크테리어__ 라는 용어가 눈에 띄었습니다. 그럴려고 그런건 아닌데,,,어쩌다보니 트렌드에 편승하여 책상 위에 다육이 화분을 가져다 놓고, 그 옆에는 핸드드립세트도 놔두고, 모니터 옆에는 작은 어항도 두고 막 이것저것 ~~*과시는 결핍이라던데?*~~ 넓지도 않은 책상 위에 한동안 널부러 놨다가 해가 바뀌면서 싹 정리를 한 번 했었습니다.<br>

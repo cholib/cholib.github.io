@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: C#
-category: programming
-slug: csharp
+title: "Git/Github"
+category: study
+slug: excel
 sidebar: false
 order: 1
 description: >
-   C# related posts
+   Excel related posts
 ---
