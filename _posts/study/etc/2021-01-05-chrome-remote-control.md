@@ -64,7 +64,7 @@ __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answe
 
 ![install](/assets/img/study/etc/chrome_remote_host/install.png){:.border.lead width="1776" height="258" loading="lazy"}
 
-클릭하시고 나면, 브라우저 상단의 작은 알림창에 __다운로드된 파일 열기__를 허용하도록 요청이 표시되는데요. 아래와 같이 <span style="color:skyblue">__예__</span> 를 클릭🖱️하시면 됩니다.<br>
+클릭하시고 나면, 브라우저 상단의 작은 알림창에 __다운로드된 파일 열기__ 를 허용하도록 요청이 표시되는데요. 아래와 같이 <span style="color:skyblue">__예__</span> 를 클릭🖱️하시면 됩니다.<br>
 
 ![permit](/assets/img/study/etc/chrome_remote_host/permit.png){:.border.lead width="1776" height="258" loading="lazy"}
 
