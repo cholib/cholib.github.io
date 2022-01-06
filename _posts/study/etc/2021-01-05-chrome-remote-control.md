@@ -51,13 +51,13 @@ __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answe
 
 로그인이 완료되면, 아래와 같이 상대방과 화면을 공유할 코드를 생성하기 위해 __원격지원__ 화면으로 진입하게 됩니다.<br>
 
-![select_share_screen](/assets/img/study/etc/chrome_remote_host/select_share_screen.PNG){:.border.lead width="1776" height="258" loading="lazy"}
+![select_share_screen](/assets/img/study/etc/chrome_remote_host/select_share_screen.png){:.border.lead width="1776" height="258" loading="lazy"}
 
 그리고 위의 <span style="color:red">__빨간색 테두리 표시__</span>로 된  __이기기 화면 공유__ 모듈에서 체크<span style="color:red">__✔__</span> 표시된 다운로드 버튼을 클릭해 주세요.<br>
 
 체크하시면 아래와 같이 화면공유를 위한 프로그램을 PC에 저장하시면 됩니다.<br>
 
-![download_hostprogram](/assets/img/study/etc/chrome_remote_host/download_hostprogram.PNG){:.border.lead width="1776" height="258" loading="lazy"}
+![download_hostprogram](/assets/img/study/etc/chrome_remote_host/download_hostprogram.png){:.border.lead width="1776" height="258" loading="lazy"}
 
 다운로드가 완료되면 아래와 같이 *동의 및 설치* 버튼을 클릭🖱️해 주세요.🙂<br>
 
@@ -83,7 +83,7 @@ __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answe
 
 ![share_access_code](/assets/img/study/etc/chrome_remote_host/share_access_code.png){:.border.lead width="1776" height="258" loading="lazy"}
 
-생성된 코드는 <u>__5분간 유효__</u>하므로 5분 이내에 상대방이 접속하지 않으면 코드 생성을 버튼을 다시 클릭해서 전달하시면 되겠습니다.<br><br>
+생성된 코드는 __<u>5분간 유효</u>__ 하므로 5분 이내에 상대방이 접속하지 않으면 코드 생성을 버튼을 다시 클릭해서 전달하시면 되겠습니다.<br><br>
 
 ## 🧑‍💻 화면 연결 완료
 
