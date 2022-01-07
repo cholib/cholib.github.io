@@ -22,17 +22,10 @@ last_modified_at: 2022-01-07
 
 <br>
 
-민지아빠🙋‍♂️: "연어야, 와이프 노트북에 OOO프로그램이 없는지 다른 사람한테서 받은 파일이 안 봐지는 것 같다. 내일 만나서 밥 먹으면서 좀 봐죠."<br>
+민지아빠🙋‍♂️: "와이프 노트북에 OOO프로그램이 없는지 다른 사람한테서 받은 파일이 안 봐지는 것 같다고 하네. 니가 내일 만나서 밥 먹으면서 좀 봐죠."<br>
 
-조연어👨‍💻: "어 간단할 것 같은데 원격으로 하까?🤣"<br>
+조연어👨‍💻: "어..원격으로 하까? 🤣"<br>
 
-<!--깐부 영상--> 
-<div class="iframe-container">
-    <iframe src="https://www.youtube.com/watch?v=hIJ8TIVn3hA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br>
-
-🙄...
 <br>
 
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: grid
 type: tag
-title: "구글 크롬 원격지원"
+title: "Google remote Control"
 category: etc
 slug: chromeRemoteControl
 sidebar: true
