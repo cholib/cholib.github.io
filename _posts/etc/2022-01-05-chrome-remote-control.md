@@ -22,17 +22,15 @@ last_modified_at: 2022-01-07
 
 <br>
 
-민지아빠🙋‍♂️: "와이프 노트북에 OOO프로그램이 없는지 다른 사람한테서 받은 파일이 안 봐지는 것 같다고 하네. 니가 내일 만나서 밥 먹으면서 좀 봐죠."<br>
+🙋‍♂️ 민지아빠: "와이프 노트북에 OOO프로그램이 없는지 다른 사람한테서 받은 파일이 안 봐지는 것 같다고 하네. 내일 만나서 밥 먹고 니가 좀 봐죠."<br>
 
-조연어👨‍💻: "어..원격으로 하까? 🤣"<br>
-
-<br>
+👨‍💻 조연어: "어..원격으로 하까? 🤣"<br>
 
 </div>
 </details>
 <br>
 
-__내 PC의 화면을__ <span style="color:skyblue">__구글 원격 데스크톱__</span> __으로 연결하여 원격을 허용한 상대에게 공유 할 수 있습니다.__<br>
+__내 PC의 화면을__ <span style="color:skyblue"> __구글 원격 데스크톱__</span> __으로 연결하여 원격을 허용한 상대에게 공유 할 수 있습니다.__<br>
 
 __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answer/27441?hl=ko){:target="_blank"}이 있고, PC에 [🔗크롬](https://www.google.co.kr/chrome/?brand=IBEF&gclid=Cj0KCQiAoNWOBhCwARIsAAiHnEhIcn-j6LTHgXHodIrWuh5b0hUhREEyzZEw1OcuY9twvVRHewBPT7gaApkiEALw_wcB&gclsrc=aw.ds){:target="_blank"}이 설치되어 있다면 아래와 같이 진행하시면 되겠습니다.__<br>
 
@@ -44,13 +42,13 @@ __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answe
 ### 구글에서 원격지원 검색
 ![search_chrome_remote_access](/assets/img/etc/chrome_remote_host/search_chrome_remote_access.PNG){:.border.lead width="1776" height="258" loading="lazy"}
 
-구글 검색창에서 위와 같이 "***구글원격지원***" 이라고 입력 하신후 엔터키(혹은, 검색입력창 우측의 돋보기 버튼 클릭)를 치면, "***Chrome 원격 데스크톱 - Google***"이라는 검색결과 최상단에 확인 됩니다.<br><br>
+구글 검색창에 "***구글원격지원***" 을 입력하고 엔터키를 치면, "***Chrome 원격 데스크톱 - Google***" 이라는 검색결과가 위와 같이 확인 됩니다.<br><br>
 
 ## 🚀 내 화면 공유 코드 생성
 
 ### 1. 원격지원 화면 진입
 
-"***Chrome 원격 데스크톱 - Google***"을 클릭하여 __[🔗Chrome 원격 데스크톱](https://support.google.com/accounts/answer/27441?hl=ko){:target="_blank"}__ 화면에 진입하고, 아래와 같이 ***내 화면 공유*** (<span style="color:red">__빨간색 테두리 표시__</span>)를 클릭🖱️합니다.<br><br>
+"***Chrome 원격 데스크톱 - Google***"을 클릭하여 __[🔗Chrome 원격 데스크톱](https://support.google.com/accounts/answer/27441?hl=ko){:target="_blank"}__ 화면에 진입하고, 아래와 같이 ***내 화면 공유*** (<span style="color:red">__빨간색 테두리 표시__</span>)를 클릭합니다.<br><br>
 
 ![search_chrome_remote_access](/assets/img/etc/chrome_remote_host/select_share.PNG){:.border.lead width="1776" height="258" loading="lazy"}
 
@@ -89,7 +87,7 @@ __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answe
 
 ### 3. 화면 공유 코드 생성 
 
-화면에 있는 ***+ 코드 생성*** 버튼을 을 클릭🖱️하여 코드를 생성합니다.<br>
+화면에 있는 ***+ 코드 생성*** 버튼을 을 클릭하여 코드를 생성합니다.<br>
 
 ![complete_install](/assets/img/etc/chrome_remote_host/complete_install.png){:.border.lead width="1776" height="258" loading="lazy"}
 
@@ -113,9 +111,18 @@ __원거리에 계시는 가족과 친구의 PC 설정을 도와드릴 경우에
 
 ~~*이 글은 삼십년지기의 사소한 부탁을 위해 정성스럽게 작성되었습니다..*🤣~~<br>
 
-"끝"<br><br>
+"끝"<br>
 
-[🔼TOP](#)
+
+
+***
+<br>
+
+👨‍💻 개인 학습자료용 기록 블로그입니다. 오류나 틀린 부분에 대해서는 언제든지 댓글이나 메일로 알려주시면 즉시 수정토록 하겠습니다. 감사합니다.👨‍🔧
+      
+[🔼TOP](# "맨 위로 이동하기"){: .btn .btn--primary }{: .align-right}
+
+<br>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>이 저작물은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
 
