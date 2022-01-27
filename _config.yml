@@ -138,7 +138,7 @@ defaults:
 
   # Don't include site verification file(for google) in the sitemap
   - scope:
-      path:            googleeb01ac24d381befc.html
+      path:            google212c8e13dbbb6973.html
     values:
       sitemap:         false
 
