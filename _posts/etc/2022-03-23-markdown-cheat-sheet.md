@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[Tip] 마크다운 문법(Markdown Syntax)"
-category: etc
+title: "마크다운 문법(Markdown Syntax)"
+category: programming
 tags: markdown
 image: /assets/img/md/Markdown.png
 accent_image: 
