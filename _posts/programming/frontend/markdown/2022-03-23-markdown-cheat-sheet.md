@@ -194,7 +194,7 @@ public int Score{<br>
 ### 이탤릭체
 ```markdown
 *기울어진 텍스트*
-***굵고 기울여진 텍스트***
+***굵고 기울어진 텍스트***
 ```
 *기울어진 텍스트입니다*
 ***굵고 기울어진 텍스트***
@@ -246,7 +246,7 @@ public int Score{<br>
 
 ### 이미지에 링크 삽입(새창)
 \!\[image](이미지주소)](이동하려는 링크 주소)&#123;: target="_blank"&#125;<br>
-[![image](/assets\img\md\w3cschool.jpg){: target="_blank"}{: width="100px" height="100px"}{: .align-center}](https://www.w3schools.com/)
+[![image](/assets\img\md\w3cschool.jpg){: width="100px" height="100px"}{: .align-center}{:target="_blank"}](https://www.w3schools.com/)
 
 
 
@@ -311,24 +311,6 @@ public int Score{<br>
        - 하하
        - 하하하
 3. 알겠쥬  
-
-### check list
-✔ \- \[ \] 입력으로 리스트를 체크박스 형태로 표시할 수 있다.  
-(\[\]앞뒤로 space(여백) 주의.)
-
-```markdown
-- [x] Checked
-- [ ] Unchecked
-- [ ] 아메리카노
-- [x] 카페라떼
-- [ ] 카푸치노
-```
-
-- [x] Checked
-- [ ] Unchecked
-- [ ] 아메리카노
-- [x] 카페라떼
-- [ ] 카푸치노
 
 
 <br>
