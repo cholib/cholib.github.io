@@ -271,7 +271,7 @@ iframe 이용하기
 ```
 
 <div class="iframe-container">
-    <iframe src="https://www.youtube.com/watch?v=-9EHdp1ynUU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/-9EHdp1ynUU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <br>
