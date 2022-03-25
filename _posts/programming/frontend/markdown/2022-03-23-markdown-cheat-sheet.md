@@ -62,7 +62,7 @@ last_modified_at: 2022-03-23
 
 예를 들어,
 
-\```c#<br>
+\`\`\`c#<br>
 public int Score{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Score;<br>
@@ -74,7 +74,7 @@ public int Score{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score += value;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }<br>
-\```
+\`\`\` 
 
 ```c#
 
