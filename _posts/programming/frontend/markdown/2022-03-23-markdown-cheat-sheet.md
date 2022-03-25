@@ -240,24 +240,38 @@ public int Score{<br>
 
 
 ### 이미지에 링크 삽입
-\!\[image](이미지주소)  
+\!\[image](이미지주소)](이동하려는 링크 주소)&#123;:target="_blank"&#125;<br>
+[![image](/assets/img/md/w3cschool.jpg){: width="100px" height="100px"}{: .align-center}{:target="_blank"}](https://www.w3schools.com/)
 
-![image](/assets\img\md\atelier401restroompicture.jpg){: width="70%" height="70%"}{: .align-center}
+### 텍스트와 이미지 어울림
+html의 img 태그를 이용에서 align의 left 또는 right을 넣어, 이미지를 텍스트속에 배치 가능 
 
-### 이미지에 링크 삽입(새창)
-\!\[image](이미지주소)](이동하려는 링크 주소)&#123;: target="_blank"&#125;<br>
-[![image](/assets\img\md\w3cschool.jpg){: width="100px" height="100px"}{: .align-center}{:target="_blank"}](https://www.w3schools.com/)
+```html
+<img align='right' width='150' height='100' src='이미지 주소'>
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec diam erat. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam posuere libero diam, et egestas est convallis eget. Fusce hendrerit porta erat nec laoreet. Proin a mi mauris. Nullam semper dui ante, quis tincidunt ex posuere id. Donec vulputate, tellus ut fermentum fringilla, diam felis sagittis lacus, sit amet hendrerit urna odio quis quam. Nullam maximus eu ex a efficitur. Vestibulum porttitor lacus at velit tincidunt egestas. Vestibulum non sapien vel nulla euismod mollis quis et mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In laoreet tincidunt felis non lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit felis vel rhoncus posuere. Cras in mi semper, pretium ante ut, congue ligula.
+```
+<img align='right' width='150' height='100' src='https://w.namu.la/s/d0fc0604ee5b4d86861231ca0949bf4a3ddb8c733904fa4e5c2442b5d60cbf92f877a2939105e0f4225baba0c5d8af4a5dbe86ec9a4df486219a8eb9886bb89a8c18d2b353712da18bfebed9e6edd24063a981c3be4f4136d46591ac6acaf81c'>
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec diam erat. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam posuere libero diam, et egestas est convallis eget. Fusce hendrerit porta erat nec laoreet. Proin a mi mauris. Nullam semper dui ante, quis tincidunt ex posuere id. Donec vulputate, tellus ut fermentum fringilla, diam felis sagittis lacus, sit amet hendrerit urna odio quis quam. Nullam maximus eu ex a efficitur. Vestibulum porttitor lacus at velit tincidunt egestas. Vestibulum non sapien vel nulla euismod mollis quis et mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In laoreet tincidunt felis non lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit felis vel rhoncus posuere. Cras in mi semper, pretium ante ut, congue ligula.
 
 ### 유튜브 삽입
+iframe 이용하기
+
 ```html
 <div class="iframe-container">
-    <iframe src="유튜브 링크 주소" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="유튜브 링크 주소" frameborder="0" allow="accelerometer;  
+    autoplay;  
+    clipboard-write;  
+    encrypted-media;  
+    gyroscope;  
+    picture-in-picture" allowfullscreen>  
+    </iframe>
 </div>
 ```
+
 <div class="iframe-container">
-    <iframe src="https://www.youtube.com/embed/jtGVbx4E1a8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/watch?v=-9EHdp1ynUU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <br>
@@ -266,10 +280,12 @@ public int Score{<br>
 `>` 로 표현할 수 있다.  
 `>>` 두개 쓰면 중첩된 인용문.
 중첩시킬땐 앞에 <kbd>spacebar</kbd> 두 번 입력한다. 
+
 ```html
 >  인용문입니다.
   >>  인용문 속 인용문입니다.
 ```
+
 >  인용문입니다.
   >>  인용문 속 인용문입니다.
 
@@ -277,6 +293,7 @@ public int Score{<br>
 
 ## 목차
 ### Unordered list
+
 ```html
 - 가나다
   * 라마바
@@ -291,6 +308,7 @@ public int Score{<br>
 - 파하하
 
 ### Ordered list
+
 ```html
 1. 가나다
 2. 라마바  
@@ -317,10 +335,12 @@ public int Score{<br>
 
 ## 구분선
 `***`와 `---`로 나타낼 수 있다.
+
 ```
 ***
 ---
 ```
+
 ***
 ---
 
@@ -331,6 +351,7 @@ public int Score{<br>
 
 마크다운에서는 지원하지 않으나 HTML의 `details` 태그로 사용 가능하다.  
 `div markdown=”1”` 은 jekyll에서 html사이에 <b>Markdown</b>을 인식 하기위해서 사용.
+
 ```html
 <details>
 <summary>클릭</summary>
@@ -368,6 +389,7 @@ public int Score{<br>
  
 ## Header
 <u>글의 제목</u>이 된다. 각 제목마다 permalink가 있는 것이 특징! # ~ ###### 로 제목 크기에 따라 h1 ~ h6을 나타낸다.
+
 ```markdown
 # h1
 ## h2
@@ -376,6 +398,7 @@ public int Score{<br>
 ##### h5
 ###### h6
 ```
+
 # h1
 ## h2
 ### h3
