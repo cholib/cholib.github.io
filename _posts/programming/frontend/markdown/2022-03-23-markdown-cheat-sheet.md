@@ -74,7 +74,7 @@ public int Score{<br>
       if (Score<0){<br>
       Score = 0;<br>
      }<br>
-   Score += value;<br>
+     Score += value;<br>
    }<br>
 }<br>
 \`\`\` 
@@ -196,7 +196,7 @@ public int Score{<br>
 *기울어진 텍스트*
 ***굵고 기울어진 텍스트***
 ```
-*기울어진 텍스트입니다*
+*기울어진 텍스트*
 ***굵고 기울어진 텍스트***
 
 ### 취소선
