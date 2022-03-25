@@ -5,7 +5,7 @@ category: programming
 tags: frontend 
 image: /assets/img/md/Markdown.png
 accent_image: 
-  background: url('/assets\img\md\i-love-markdown.png') center/cover
+  background: url('/assets/img/md/i-love-markdown.png') center/cover
   overlay: false
 accent_color: '#ccc'
 theme_color: '#ccc'
