@@ -474,7 +474,9 @@ erDiagram
     ORDER ||--|{ LINE-ITEM : contains
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 
+</div>
 
+<div class="mermaid"> 
 journey
     title My working day
     section Go to work
