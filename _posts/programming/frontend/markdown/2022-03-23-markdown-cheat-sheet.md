@@ -21,12 +21,7 @@ last_modified_at: 2022-03-23
 <div markdown="1">
 
 <br>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
  
-<div class="mermaid"> 
-  graph TD; A-->B; A-->C; B-->D; C-->D; 
-</div>
 
 ## Markdown이란?
 ### 정의
@@ -52,7 +47,7 @@ last_modified_at: 2022-03-23
 
 ## 코드 블록
 
-### 인라인 코드 블록
+### 인라인 블록
 ```html
 `inline 코드`입니다.
 ```
@@ -82,16 +77,12 @@ public int Score{<br>
 \`\`\` 
 
 ```c#
-
-     public int Score
-     {
-         get
-         {
+     public int Score{
+         get{
              return Score;
          }
  
-         set
-         {
+         set{
              if (Score<0){
                  Score = 0;
              }
@@ -99,7 +90,6 @@ public int Score{<br>
          }
      }
 ```
-
 
 <br>
 
@@ -401,6 +391,18 @@ public int Score{<br>
 ###### h6 
 
 <br>
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
+<div class="mermaid"> 
+  graph TD; A-->B; A-->C; B-->D; C-->D; 
+</div>
 
 ***
 <br>
