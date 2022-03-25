@@ -1,10 +1,10 @@
 ---
-layout: tag-list
+layout: gird
 type: tag
-title: "Markdown"
+title: "Frontend"
 category: programming
-slug: markdown
-sidebar: false
+slug: frontend
+sidebar: true
 order: 1
 description: >
    마크다운
