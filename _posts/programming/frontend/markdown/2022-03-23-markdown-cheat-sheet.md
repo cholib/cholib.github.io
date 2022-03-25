@@ -26,7 +26,7 @@ last_modified_at: 2022-03-23
 ## Markdown이란?
 ### 정의
 
-> Markdown은 문서 작성을 지원하는 태그(Tag) 형식의 문법
+> Markdown은 문서 작성을 지원하는 태그(Tag) 형식의 문법.
 
 > Markup 언어의 일종으로, HTML 경험 없이도 헤더, 글 머리 기호, 테이블, 이미지/ 링크 삽입, 글자 모양 등 다양한 서식을 쉽게 추가하는 방식의 문서 편집 문법.
 
@@ -35,7 +35,10 @@ last_modified_at: 2022-03-23
 > 마크다운 (Markdown)은 마크업 언어의 일종으로, 존 그루버(John Gruber)와 아론 스워츠(Aaron Swartz)가 만들었다. 처음 이메일의 글쓰기 형식에 영감받아 python을 이용하여 html변환기를 만드면서 시작되었다. 그루버는 마크다운으로 작성한 문서를 HTML로 변환하는 펄 스크립트도 만들었다. 
 
 ### 특징
-마크다운 문법은 읽기도 쉽지만 쓰기도 쉽다는 장점이 있다. html보다 간단하고, 마크다운에서는 소스코드를 그대로 입력할 수 있기 때문에 코드를 복사해서 사용하기도 편하고, 코드블록을 사용하면 코딩언어에 따라 하이라이트를 지원하여 가독성이 높아지는 효과가 있다. 생산성 관련하여 작성 속도, 편리성 면에서 Web문서 작성시 유리하다. 다만, 표준이 없어 핵심문법을 제외하고는 편집자에 따라 조금씩 상이하다. Tistory, Naver 블로그가 채택한 WISYWIG 에디터에 익숙한 사용자들에게는 마크다운 문법이 코딩처럼 느껴지실 수 있지만, 조금 익숙해지면 오히려 WISYWIG에디터보다 편하다는 것을 알게 될 것이다. 마크다운 문서의 파일 확장자는 .md를 쓴다. 
+
+마크다운 문법은 읽기도 쉽지만 쓰기도 쉽다는 장점이 있다. html보다 간단하고, 마크다운에서는 소스코드를 그대로 입력할 수 있기 때문에 코드를 복사해서 사용하기도 편하고, 코드블록을 사용하면 코딩언어에 따라 하이라이트를 지원하여 가독성이 높아지는 효과가 있다.  
+
+생산성 관련하여 작성 속도, 편리성 면에서 Web문서 작성시 유리하다. 다만, 표준이 없어 핵심문법을 제외하고는 편집자에 따라 조금씩 상이하다. Tistory, Naver 블로그가 채택한 WISYWIG 에디터에 익숙한 사용자들에게는 마크다운 문법이 코딩처럼 느껴지실 수 있지만, 조금 익숙해지면 오히려 WISYWIG에디터보다 편하다는 것을 알게 될 것이다. 마크다운 문서의 파일 확장자는 .md를 쓴다. 
 
 </div>
 </details>
@@ -238,13 +241,12 @@ public int Score{<br>
 
 ### 이미지에 링크 삽입
 \!\[image](이미지주소)  
-로컬 파일 경로 및 URL 입력  
 
 ![image](/assets\img\md\atelier401restroompicture.jpg){: width="70%" height="70%"}{: .align-center}
 
 ### 이미지에 링크 삽입(새창)
-\!\[image](이미지주소)](이동하려는 링크 주소)&#123;target="_blank"&#125;
-[![image](/assets\img\md\w3cschool.jpg){: width="100px" height="100px"}{: .align-center}{target="_blank"}](https://www.w3schools.com/)
+\!\[image](이미지주소)](이동하려는 링크 주소)&#123;: target="_blank"&#125;<br>
+[![image](/assets\img\md\w3cschool.jpg){: target="_blank"}{: width="100px" height="100px"}{: .align-center}](https://www.w3schools.com/)
 
 
 
@@ -311,13 +313,20 @@ public int Score{<br>
 3. 알겠쥬  
 
 ### check list
+✔ - [ ] 입력으로 리스트를 체크박스 형태로 표시할 수 있습니다.  
+([]앞뒤로 space(여백)를 꼭 입력해주세요. x는 소문자 주의.)
 ```markdown
-- [X] Checked
+- [x] Checked
 - [ ] Unchecked
-
+- [ ] 아메리카노
+- [x] 카페라떼
+- [ ] 카푸치노
 ```
-- [X] Checked
+- [x] Checked
 - [ ] Unchecked
+- [ ] 아메리카노
+- [x] 카페라떼
+- [ ] 카푸치노
 
 
 <br>
@@ -392,102 +401,6 @@ public int Score{<br>
 
 <br>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
-
-
-<div class="mermaid"> 
-  graph TD; A-->B; A-->C; B-->D; C-->D; 
-
-</div>
-
-<div class="mermaid"> 
-  sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-
-</div>
-
-<div class="mermaid"> 
-  gantt
-  dateFormat  YYYY-MM-DD
-  title Adding GANTT diagram to mermaid
-  excludes weekdays 2014-01-10
-
-  section A section
-  Completed task            :done,    des1, 2014-01-06,2014-01-08
-  Active task               :active,  des2, 2014-01-09, 3d
-  Future task               :         des3, after des2, 5d
-  Future task2               :         des4, after des3, 5d
-
-</div>
-
-<div class="mermaid"> 
-  classDiagram
-  Class01 <|-- AveryLongClass : Cool
-  Class03 *-- Class04
-  Class05 o-- Class06
-  Class07 .. Class08
-  Class09 --> C2 : Where am i?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorilla
-  Class08 <--> C2: Cool label
-</div>
-
-<div class="mermaid"> 
-
-gitGraph:
-options
-{
-    "nodeSpacing": 150,
-    "nodeRadius": 10
-}
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
-</div>
-
-<div class="mermaid"> 
-
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-
-</div>
-
-<div class="mermaid"> 
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
-
-</div>
 ***
 <br>
 
