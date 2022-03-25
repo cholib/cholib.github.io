@@ -399,8 +399,9 @@ public int Score{<br>
 <div class="mermaid"> 
   graph TD; A-->B; A-->C; B-->D; C-->D; 
 
-  <br><br>
+</div>
 
+<div class="mermaid"> 
   sequenceDiagram
     participant Alice
     participant Bob
@@ -413,7 +414,9 @@ public int Score{<br>
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 
-  <br><br>
+</div>
+
+<div class="mermaid"> 
   gantt
   dateFormat  YYYY-MM-DD
   title Adding GANTT diagram to mermaid
@@ -425,7 +428,9 @@ public int Score{<br>
   Future task               :         des3, after des2, 5d
   Future task2               :         des4, after des3, 5d
 
-  <br><br>
+</div>
+
+<div class="mermaid"> 
   classDiagram
   Class01 <|-- AveryLongClass : Cool
   Class03 *-- Class04
@@ -440,8 +445,10 @@ public int Score{<br>
   Class01 : int chimp
   Class01 : int gorilla
   Class08 <--> C2: Cool label
+</div>
 
-<br><br>
+<div class="mermaid"> 
+
 gitGraph:
 options
 {
@@ -458,14 +465,16 @@ checkout master
 commit
 commit
 merge newbranch
+</div>
 
-<br><br>
+<div class="mermaid"> 
+
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     ORDER ||--|{ LINE-ITEM : contains
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 
-<br><br>
+
 journey
     title My working day
     section Go to work
@@ -477,7 +486,6 @@ journey
       Sit down: 5: Me
 
 </div>
-
 ***
 <br>
 
