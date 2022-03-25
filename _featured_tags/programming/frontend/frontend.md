@@ -1,5 +1,5 @@
 ---
-layout: gird
+layout: grid
 type: tag
 title: "Frontend"
 category: programming
