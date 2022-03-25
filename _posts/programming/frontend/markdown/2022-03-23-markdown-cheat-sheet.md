@@ -253,7 +253,7 @@ last_modified_at: 2022-03-23
 
 ### 이미지에 링크 삽입(새창)
 \!\[image](이미지주소)](이동하려는 링크 주소)&#123;target="_blank"&#125;
-[![image](/assets\img\md\w3cschool.jpg)](https://www.w3schools.com/){target="_blank"}
+[![image](/assets\img\md\w3cschool.jpg){: width="100px" height="100px"}{: .align-center}{target="_blank"}](https://www.w3schools.com/)
 
 
 
@@ -398,15 +398,6 @@ last_modified_at: 2022-03-23
 #### h4
 ##### h5
 ###### h6 
-
-h1와 h2는 아래와 같이 표현할 수도 있다.
-```markdown
-h1
-===
-
-h2
----
-```
 
 <br>
 
