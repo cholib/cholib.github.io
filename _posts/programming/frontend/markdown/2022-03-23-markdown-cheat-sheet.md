@@ -313,8 +313,9 @@ public int Score{<br>
 3. 알겠쥬  
 
 ### check list
-✔ - [ ] 입력으로 리스트를 체크박스 형태로 표시할 수 있습니다.  
-([]앞뒤로 space(여백)를 꼭 입력해주세요. x는 소문자 주의.)
+✔ \- \[ \] 입력으로 리스트를 체크박스 형태로 표시할 수 있다.  
+(\[\]앞뒤로 space(여백) 주의.)
+
 ```markdown
 - [x] Checked
 - [ ] Unchecked
@@ -322,6 +323,7 @@ public int Score{<br>
 - [x] 카페라떼
 - [ ] 카푸치노
 ```
+
 - [x] Checked
 - [ ] Unchecked
 - [ ] 아메리카노
