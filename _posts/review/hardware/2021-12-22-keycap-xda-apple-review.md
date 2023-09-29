@@ -60,7 +60,7 @@ last_modified_at: 2021-12-23
 
 > *"로고 징쨔.. 갬성 징쨔..."*
 
-그렇게 또 見物生心...🤦‍♂️ 며칠 되지도 않은 새 키보드의 순정 키캡(Cherry)은 제거하고 애플 XDA 키캡으로 교체해 보려고 바로 구매했습니다.~~사실은 선물용🙆‍♂️~~<br>
+그렇게 또 見物生心...🤦‍♂️ 며칠 되지도 않은 새 키보드의 순정 키캡(Cherry)은 제거하고 애플 XDA 키캡으로 교체해 보려고 바로 구매했습니다.<br>
 
 ![boxing Image](/assets/img/review/hardware/2021-12-22/keycap/boxing.jpg){:.border.lead width="1024" height="600"  loading="lazy"}
 
