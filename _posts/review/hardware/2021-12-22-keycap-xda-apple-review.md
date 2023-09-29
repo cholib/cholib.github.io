@@ -60,13 +60,13 @@ last_modified_at: 2021-12-23
 
 > *"로고 징쨔.. 갬성 징쨔..."*
 
-그렇게 또 見物生心...🤦‍♂️ 며칠 되지도 않은 새 키보드의 순정 키캡(Cherry)은 제거하고 애플 XDA 키캡으로 교체해 보려고 바로 구매했습니다.<br>
+순정 키캡(Cherry)은 제거하고 애플 XDA 키캡으로 교체해 보려고 바로 구매했습니다.<br>
 
 ![boxing Image](/assets/img/review/hardware/2021-12-22/keycap/boxing.jpg){:.border.lead width="1024" height="600"  loading="lazy"}
 
 ## 제품 구성 
 
-주문한지 하루만에 배송되었고, 박스 포장에서 꺼내보니 뽁뽁이~~에 꽁꽁 싸여 갑갑해 하길래~~ 바로 뜯었습니다.<br>
+주문한지 하루만에 배송되었고, 박스 포장을 바로 뜯었습니다.<br>
 
 |구성품목| 짜란~ |2단 포장 124키|
 |:-:|:-:|:-:|
@@ -75,7 +75,7 @@ last_modified_at: 2021-12-23
 &#128204; 제품 정보 <br> 
 
 | 항목 | 내용 |
-|------|:------:|
+|:------|:------:|
 | 제품명 | 사오파오 애플 XDA 키캡 PBT 염료승화 Apple (124키) |
 | 프로파일(높이) | XDA |
 | 재질| PBT |
@@ -103,9 +103,9 @@ last_modified_at: 2021-12-23
     <iframe src="https://www.youtube.com/embed/jtGVbx4E1a8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br>
-궁극의 몰입감을 선사하며 키를 뽁뽁 뽑아대는 으른의 손맛이랄까,,, 어릴적 작은 프라모델을 조립할 때 느꼈던 그런 비슷한 손맛이었습니다.~~*사람들이 왜 하는지 알겠다*~~<br>
+궁극의 몰입감을 선사하며 키를 뽁뽁 뽑아대는 으른의 손맛이랄까,,, 어릴적 작은 프라모델을 조립할 때 느꼈던 그런 비슷한 손맛이었습니다.<br>
 
-### 새 키캡 설치  
+### 새 키캡으로 교체  
 
 ![workout Image](/assets/img/review/hardware/2021-12-22/keycap/workout.jpg){:.border.lead width="1024" height="600"  loading="lazy"}
 
@@ -117,7 +117,7 @@ last_modified_at: 2021-12-23
 
 대박사건! 식빵🍞 스페이스바가 약간 긴가?!<br> 
 
-옆 키랑 물리적으로 간섭이 일어났습니다.<br>
+옆에 키와 약간 겹치는 상황이 발생하였습니다.<br>
 
 |맞닿은 부분|순정품과 길이 비교|
 |:-:|:-:|
@@ -127,7 +127,7 @@ last_modified_at: 2021-12-23
 
 ![spacebar_sandpaper Image](/assets/img/review/hardware/2021-12-22/keycap/spacebar_sandpaper.jpg){:.border.lead width="1024" height="600"  loading="lazy"}
 
-그렇게 살살~ 살살~ 스페이스바 모서리를 갈아가며 옆에 키와 부딪히지 않도록 조정을 했더니 다행히 아구가 맞아서 부딪히지는 않았습니다. 두드려보니 타건음도 별다른 이슈가 없길래 마저 다른 키캡을 설치하고 마무리 했습니다.. <br>
+살살~ 스페이스바 모서리를 갈아가며 옆에 키와 부딪히지 않도록 조정을 했더니 다행히 아구가 맞아서 부딪히지는 않았습니다. 두드려보니 타건음도 별다른 이슈가 없길래 마저 다른 키캡을 설치하고 마무리 했습니다.. <br>
 
 ## 교체 완료 전후 비교
 
@@ -135,7 +135,7 @@ last_modified_at: 2021-12-23
 |:-:|:-:|
 |![keycap_original Image](/assets/img/review/hardware/2021-12-22/keycap/keycap_original.jpg?h=750&w=1260)|![key-applekey Image](/assets/img/review/hardware/2021-12-22/keycap/key-applekey.jpg?h=750&w=1260)|
 
-> "크으으으~ 사과가 다했다. 진짜"
+> "크으으~ 아따마 이쁘네. 사과가 다했다. 진짜"
 
 ![keycapfullshot Image](/assets/img/review/hardware/2021-12-22/keycap/keycapfullshot.jpg){:.border.lead width="1024" height="600" loading="lazy"}
 
@@ -149,7 +149,7 @@ last_modified_at: 2021-12-23
 |:-:|:-:|:-:|
 |![esc10 Image](/assets/img/review/hardware/2021-12-22/keycap/esc10.jpg?h=750&w=1260)|![esc45 Image](/assets/img/review/hardware/2021-12-22/keycap/esc45.jpg?h=750&w=1260)|![esc90 Image](/assets/img/review/hardware/2021-12-22/keycap/esc90.jpg?h=750&w=1260)|
 
-요런 너낌이고 측면 각인은 없지만 불편하지는 않을 것 같습니다.<br> 
+측면 각인은 없지만 불편하지는 않을 것 같습니다.<br> 
 
 "끝"<br>
 
