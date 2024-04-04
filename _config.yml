@@ -29,7 +29,7 @@ title:                 CHO
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  성장을 위한 기록
+  성장을 위한 기록, 호모 나렌스
 
 # A shorter description for the sidebar.
 tagline:               >
@@ -140,7 +140,7 @@ defaults:
   - scope:
       path:            google212c8e13dbbb6973.html
     values:
-      sitemap:         false
+      sitemap:         true
 
   # Don't include site verification file(for naver) in the sitemap
   - scope:
@@ -312,10 +312,10 @@ hydejack:
   # Note that dark mode only works in the PRO version of Hydejack.
   dark_mode:
     # Set to `true` to always use the dark theme.
-    always:            false
+    always:            true
 
     # Set to `true` to use the dark theme based on visitors' preference (OS setting).
-    dynamic:           false
+    dynamic:           true
 
     # Set to `true` to allow visitors to switch between light and dark mode.
     icon:              true
