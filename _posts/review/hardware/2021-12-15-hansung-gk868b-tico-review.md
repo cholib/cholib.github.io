@@ -17,8 +17,6 @@ last_modified_at: 2021-12-18
 ---
 
 <!-- # 한성 GK868B TICO 35g (*a.k.a* 한무무) -->
-* this unordered seed list will be replaced by the toc
-{:toc}
 
 <details>
 <summary>🧾 Prologue (접기/펼치기)</summary>
@@ -60,7 +58,8 @@ last_modified_at: 2021-12-18
 </div>
 </details>
 
-
+* this unordered seed list will be replaced by the toc
+{:toc}
 
 ## 한성 GK868B TICO 35g
 

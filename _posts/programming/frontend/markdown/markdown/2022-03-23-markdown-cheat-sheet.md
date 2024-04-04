@@ -22,8 +22,7 @@ last_modified_at: 2022-03-23
 
 <br>
 
-* this unordered seed list will be replaced by the toc
-{:toc}
+
 
 ## Markdown이란?
 ### 정의
@@ -46,7 +45,8 @@ last_modified_at: 2022-03-23
 </details>
 <br>
 
-
+* this unordered seed list will be replaced by the toc
+{:toc}
 
 
 ## 코드 블록
