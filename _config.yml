@@ -41,14 +41,14 @@ keywords:              []
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  #/assets/img/choyeoneo.png
+logo:                  /assets/img/logo.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
   name:                cholib
   email:               cholibsns@gmail.com
-  picture:             /assets/img/choyeoneo.png
+  picture:             /assets/img/logo.png
   social:
     #linkedin:          hyeon-oh-7b014a197
     #github:            cholib
