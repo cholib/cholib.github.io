@@ -16,6 +16,9 @@ date: 2022-01-05
 last_modified_at: 2022-01-07
 ---
 
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 <details>
 <summary>🧾 Prologue (접기/펼치기)</summary>
 <div markdown="1">
@@ -34,8 +37,6 @@ __내 PC의 화면을__ <span style="color:skyblue"> __구글 원격 데스크�
 
 __사용 가능한 [🔗구글 계정](https://support.google.com/accounts/answer/27441?hl=ko){:target="_blank"}이 있고, PC에 [🔗크롬](https://www.google.co.kr/chrome/?brand=IBEF&gclid=Cj0KCQiAoNWOBhCwARIsAAiHnEhIcn-j6LTHgXHodIrWuh5b0hUhREEyzZEw1OcuY9twvVRHewBPT7gaApkiEALw_wcB&gclsrc=aw.ds){:target="_blank"}이 설치되어 있다면 아래와 같이 진행하시면 되겠습니다.__<br>
 
-* this unordered seed list will be replaced by the toc
-{:toc}
 
 ## 🔍 검색 
 

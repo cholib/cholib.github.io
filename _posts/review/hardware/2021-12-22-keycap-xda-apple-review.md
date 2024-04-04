@@ -17,6 +17,8 @@ last_modified_at: 2021-12-23
 ---
 
 <!-- # XDA 애플 키캡  -->
+* this unordered seed list will be replaced by the toc
+{:toc}
 
 <details>
 <summary>🧾 Prologue (접기/펼치기)</summary>
@@ -49,8 +51,7 @@ last_modified_at: 2021-12-23
 </div>
 </details>
 
-* this unordered seed list will be replaced by the toc
-{:toc}
+
 
 ## 교체키 선택 
 
