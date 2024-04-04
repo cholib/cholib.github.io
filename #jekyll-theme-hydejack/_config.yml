@@ -37,7 +37,7 @@ hydejack:
   hide_last_modified:  false
 
   dark_mode:
-    always:            false
+    always:            true
     dynamic:           false
     sunrise:           6
     sunset:            18
@@ -47,7 +47,7 @@ hydejack:
     enabled:           false
     cache_version:     1
     precache_assets:
-      - /assets/img/swipe.svg
+      - /assets/img/safari-pinned-tab.svg
 
 optional_front_matter:
   remove_originals:    true
