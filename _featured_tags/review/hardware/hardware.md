@@ -4,7 +4,7 @@ type: tag
 title: Hardware
 category: archives
 slug: hardware
-sidebar: true
+sidebar: false
 order: 4
 description: >
    
