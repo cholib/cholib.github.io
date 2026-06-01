@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "마크다운 문법(Markdown Syntax)"
-category: programming
+category: archives
 tags: frontend 
 image: /assets/img/md/Markdown.png
 accent_image: 
