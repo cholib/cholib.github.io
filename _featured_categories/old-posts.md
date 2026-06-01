@@ -2,7 +2,7 @@
 layout: list
 type: category
 title: Old Posts
-slug: archives
+slug: old-posts
 sidebar: true
 order: 50
 description: >
