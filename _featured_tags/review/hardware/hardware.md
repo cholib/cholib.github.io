@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: Hardware
-category: review
+category: archives
 slug: hardware
 sidebar: true
 order: 4

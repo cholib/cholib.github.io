@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: "Google remote Control"
-category: etc
+category: archives
 slug: chromeRemoteControl
 sidebar: true
 order: 2

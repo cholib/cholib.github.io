@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: Keyboard
-category: review
+category: archives
 slug: keyboard
 sidebar: false
 order: 4

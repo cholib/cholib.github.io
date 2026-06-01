@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: "Emoji"
-category: etc
+category: archives
 slug: emoji
 sidebar: true
 order: 1

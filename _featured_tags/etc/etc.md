@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: "Etc"
-category: etc
+category: archives
 slug: etc
 sidebar: false
 order: 1

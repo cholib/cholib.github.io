@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: keycap
-category: review
+category: archives
 slug: keycap
 sidebar: false
 order: 4
