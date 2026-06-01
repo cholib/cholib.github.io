@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "마크다운 문법(Markdown Syntax)"
-categories: [old-posts]
+categories: 
+  - archives
+  - old-posts
 tags: [frontend, old-posts]
 image: /assets/img/md/Markdown.png
 accent_image: 
