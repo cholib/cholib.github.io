@@ -1,26 +1,8 @@
-<span class="sr-only">{{ site.data.strings.navigation | default: "Navigation" }}{{ site.data.strings.colon | default:
-  ":" }}</span>
+<span class="sr-only">{{ site.data.strings.navigation | default:"Navigation" }}{{ site.data.strings.colon | default:":"
+  }}</span>
 <ul>
-  {% if site.menu %}
-  {% for item in site.menu %}
-  <li>
-    <a {% if forloop.first %}id="_navigation" {% endif %} href="{{ item.url | relative_url }}"
-      class="sidebar-nav-item">{{ item.title }}</a>
-    {% if item.submenu %}
-    <ul class="list-body">
-      {% for subitem in item.submenu %}
-      <li>
-        <a class="sidebar-nav-subitem" href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </li>
-  {% endfor %}
-  {% else %}
   {% assign nodes = site.html_pages | concat: site.documents | where: "sidebar", true | sort: "order" %}
   {% assign tag_nodes = nodes | where: "type", "tag" %}
-  {% assign count = 0 %}
   {% for node in nodes %}
   {% unless node.redirect_to %}
   {% if node.type != "tag" %}
@@ -55,5 +37,4 @@
   </li>
   {% endunless %}
   {% endfor %}
-  {% endif %}
 </ul>
