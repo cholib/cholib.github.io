@@ -4,7 +4,7 @@ type: tag
 title: "Etc"
 category: archives
 slug: etc
-sidebar: false
+sidebar: true
 order: 1
 description: >
    기타
