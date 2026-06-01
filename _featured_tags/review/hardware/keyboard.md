@@ -2,7 +2,7 @@
 layout: grid
 type: tag
 title: Keyboard
-category: archives
+category: old-posts
 slug: keyboard
 sidebar: true
 order: 4

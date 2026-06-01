@@ -1,10 +1,11 @@
 ---
 layout: list
-type: category
+type: tag
 title: Old Posts
+category: archives
 slug: old-posts
 sidebar: true
-order: 50
+order: 0
 description: >
   이전글 모음
 ---

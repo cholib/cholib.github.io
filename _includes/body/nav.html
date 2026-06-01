@@ -29,9 +29,30 @@
     {% if subnodes != empty %}
     <ul class="list-body">
       {% for subnode in subnodes %}
-      <li>
-        <a class="sidebar-nav-subitem" href="{{ subnode.url | relative_url }}">{{ subnode.title }}</a>
-      </li>
+        {% assign subsubnodes = tag_nodes | where_exp: "item", "item.category == subnode.slug" %}
+        {% assign subsubnodes = subsubnodes | where_exp: "item", "item.slug != subnode.slug" %}
+        {% if subsubnodes != empty %}
+        <li>
+          <input type="checkbox" id="folder-checkbox-{{ count }}-{{ forloop.index }}" />
+          <div class="list-wrapper">
+            <a class="sidebar-nav-subitem" href="{{ subnode.url | relative_url }}">{{ subnode.title }}</a>
+            <button class="spread-btn" onclick="javascript:spread('{{ count }}-{{ forloop.index }}')">
+              <label id="spread-icon-{{ count }}-{{ forloop.index }}" class="material-icons">arrow_right</label>
+            </button>
+          </div>
+          <ul class="list-body">
+            {% for subsubnode in subsubnodes %}
+            <li>
+              <a class="sidebar-nav-subitem" href="{{ subsubnode.url | relative_url }}">{{ subsubnode.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% else %}
+        <li>
+          <a class="sidebar-nav-subitem" href="{{ subnode.url | relative_url }}">{{ subnode.title }}</a>
+        </li>
+        {% endif %}
       {% endfor %}
     </ul>
     {% endif %}
