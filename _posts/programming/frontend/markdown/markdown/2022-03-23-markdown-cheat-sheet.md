@@ -2,7 +2,7 @@
 layout: post
 title: "마크다운 문법(Markdown Syntax)"
 categories: [old-posts]
-tags: frontend 
+tags: [frontend, old-posts]
 image: /assets/img/md/Markdown.png
 accent_image: 
   background: url('/assets/img/md/i-love-markdown.png') center/cover

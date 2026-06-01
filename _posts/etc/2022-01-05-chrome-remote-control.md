@@ -2,7 +2,7 @@
 layout: post
 title: "[Tip] 구글 크롬 원격지원"
 categories: [old-posts]
-tags: chromeRemoteControl
+tags: [chromeRemoteControl, old-posts]
 image: /assets/img/etc/chrome_remote_host/chrome_remote_desktop.jpg
 accent_image: 
   background: url('/assets/img/etc/chrome_remote_host/chrome.png') center/cover

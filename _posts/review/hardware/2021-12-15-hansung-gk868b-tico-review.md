@@ -2,7 +2,7 @@
 layout: post
 title: "[Review] 한성 GK868B"
 categories: [old-posts]
-tags: keyboard
+tags: [keyboard, old-posts]
 image: /assets/img/review/hardware/2021-12-15/keyboard/keyboard.jpeg
 accent_image: 
   background: url('/assets/img/review/hardware/2021-12-15/keyboard/keyboard.jpeg') center/cover

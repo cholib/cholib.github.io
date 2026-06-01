@@ -2,7 +2,7 @@
 layout: list
 type: category
 title: "이전글"
-slug: old-posts
+slug: archives/old-posts
 sidebar: false
 order: 1
 description: >
