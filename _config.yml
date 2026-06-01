@@ -68,6 +68,29 @@ author:
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2021. All rights reserved.
 
+# Add links to the sidebar.
+menu:
+  - title:             ARCHIVES
+    url:               /archives/
+    submenu:
+      - title:         Old Posts
+        url:           /archives/old-posts/
+  - title:             AREAS
+    url:               /areas/
+  - title:             ETC
+    url:               /etc/
+  - title:             EXERCISE
+    url:               /exercise/
+    submenu:
+      - title:         RUNNING
+        url:           /exercise/running/
+      - title:         WEIGHT-TRAINING
+        url:           /exercise/weight-training/
+  - title:             PROJECTS
+    url:               /projects/
+  - title:             RESOURCES
+    url:               /resources/
+
 # Format of the permalinks
 # permalink:             /blog/:categories/:year-:month-:day-:title/
 permalink:             none
