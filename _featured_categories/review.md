@@ -3,8 +3,8 @@ layout: list
 type: category
 title: Review
 slug: review
-sidebar: true
-order: 4
+sidebar: false
+order: 101
 description: >
   Review: All the Things 
 ---
