@@ -19,7 +19,9 @@ layout: base
 
 {% assign plugins = site.plugins | default:site.gems %}
 
-{% if plugins contains 'jekyll-paginate' %}
+{% if page.pagination.enabled == false %}
+  {% assign posts = site.posts %}
+{% elsif plugins contains 'jekyll-paginate' %}
   {% assign posts = paginator.posts %}
 {% else %}
   {% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}
