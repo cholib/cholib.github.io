@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Review] 한성 GK868B"
-category: archives
+categories: [archives, old-posts]
 tags: keyboard
 image: /assets/img/review/hardware/2021-12-15/keyboard/keyboard.jpeg
 accent_image: 
