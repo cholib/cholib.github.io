@@ -472,7 +472,8 @@ jekyll_compose:
 jekyll-feed settings:
 feed:
   categories:
-    - review
-    - study
-    - exercise
-    - programming
+    - projects
+    - areas
+    - resources
+    - archives
+    
