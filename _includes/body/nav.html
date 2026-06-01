@@ -8,6 +8,8 @@
   {% unless node.redirect_to %}
   {% if node.type != "tag" %}
   {% assign subnodes = tag_nodes | where_exp: "item", "item.category == node.slug" %}
+  {% assign subnodes = subnodes | where_exp: "item", "item.slug != node.slug" %}
+  {% assign subnodes = subnodes | sort: "order" %}
   {% if subnodes != empty %}
   {% assign count = count | plus: 1 %}
   {% endif %}
