@@ -4,7 +4,7 @@ type: tag
 title: Keyboard
 category: archives
 slug: keyboard
-sidebar: false
+sidebar: true
 order: 4
 description: >
    
