@@ -2,7 +2,7 @@
 layout: post
 title: "[Review] XDA 애플 키캡"
 category: archives
-tags: hardware keycap
+tags: keycap
 image: /assets/img/review/hardware/2021-12-22/keycap/unboxing4_1.jpg
 accent_image: 
   background: url('/assets/img/review/hardware/2021-12-22/keycap/apple.jpg') center/cover
