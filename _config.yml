@@ -54,6 +54,19 @@ author:
     #github:            cholib
     #stackoverflow:     
     email:             cholibsns@gmail.com
+# Add links to the sidebar.
+menu:
+  - title:             Projects
+    url:               /projects/
+  - title:             Areas
+    url:               /areas/  
+  - title:             Resources
+    url:               /resources/
+  - title:             Archives
+    url:               /archives/
+    submenu: 
+      - title:         Old Posts
+        url:           /old-posts/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
