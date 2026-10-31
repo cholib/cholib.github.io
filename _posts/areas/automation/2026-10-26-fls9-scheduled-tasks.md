@@ -7,7 +7,8 @@ categories:
 tags: [automation, 예약작업, 자동화, GitHubActions, 운영]
 description: >
   폴스나인 사이트·유튜브 운영을 돌리는 예약 작업 목록과 작업 방(대화) 구성, 운영 원칙.
-date: 2026-10-31 23:00:00 +0900
+date: 2026-10-26 20:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /areas/automation/fls9-scheduled-tasks/
 ---
 폴스나인은 사람이 손대지 않아도 돌아가게 만들고 있다. 그 예약 작업들이 언제 무엇을 하는지 한눈에 보려고 정리했다. 작업이 바뀌면 이 표를 고친다.

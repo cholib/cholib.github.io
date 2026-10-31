@@ -7,7 +7,8 @@ categories:
 tags: [fls9-youtube, matplotlib, ffmpeg, Python, 영상제작, 애니메이션]
 description: >
   중계 화면 없이 축구 전술을 설명하는 크레파스 스타일 영상을 파이썬으로 만드는 방법.
-date: 2026-10-31 22:10:00 +0900
+date: 2026-10-29 02:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /projects/fls9-youtube/crayon-pipeline/
 ---
 폴스나인 영상은 중계 화면을 한 컷도 쓰지 않는다. 대신 **스케치북에 크레파스로 그린 듯한 애니메이션**을 파이썬으로 직접 그린다. 저작권 걱정이 없고, 편마다 그림이 달라서 '반복 콘텐츠' 심사에도 안전하다.

@@ -7,7 +7,8 @@ categories:
 tags: [cloudflare, CDN, DNS, DDoS, CloudflarePages, Workers]
 description: >
   클라우드플레어가 무엇을 하는 회사인지 피자 가게 비유로 쉽게 풀고, 무료로 시작하는 순서까지 정리했다.
-date: 2026-10-31 23:30:00 +0900
+date: 2026-10-29 12:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /resources/cloudflare/what-is-cloudflare/
 ---
 ## 매일 쓰는데 정체를 모르는 회사

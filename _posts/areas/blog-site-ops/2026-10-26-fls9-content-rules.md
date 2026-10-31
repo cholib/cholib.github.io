@@ -7,7 +7,8 @@ categories:
 tags: [blog-site-ops, fls9, 콘텐츠운영, 글쓰기, 운영규칙]
 description: >
   축구 분석 사이트 fls9.kr을 계속 운영하면서 정해 둔 글 종류, 발행 시각, 말투, 이미지, 운영 원칙.
-date: 2026-10-31 22:50:00 +0900
+date: 2026-10-26 19:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /areas/blog-site-ops/fls9-content-rules/
 ---
 fls9.kr은 끝이 없는 일이라 Areas에 둔다. 운영하면서 정한 규칙을 한곳에 모았다. 규칙이 바뀌면 이 글을 고친다.

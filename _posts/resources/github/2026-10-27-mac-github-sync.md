@@ -7,7 +7,8 @@ categories:
 tags: [github-ref, git, GitHub, 동기화, 트러블슈팅]
 description: >
   여러 작업이 한 저장소를 함께 고칠 때 맥미니와 GitHub이 어긋나지 않게 하는 규칙과, 실제로 겪은 문제·해결법.
-date: 2026-10-31 23:10:00 +0900
+date: 2026-10-27 14:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /resources/github/mac-github-sync/
 ---
 폴스나인은 예약 작업 여러 개와 대화 여러 개가 같은 저장소를 고친다. 그러다 보니 맥미니와 GitHub이 몇 번 어긋났다. 다시 꺼내 볼 수 있게 규칙과 해결법을 정리한다.

@@ -7,7 +7,8 @@ categories:
 tags: [fls9-youtube, 유튜브, YPP, 수익승인, 프로젝트노트]
 description: >
   @fls9tv 수익 승인 프로젝트의 목표, 마감, 전략, 주간 운영표, 원칙과 지금까지의 진행 상황.
-date: 2026-10-31 22:00:00 +0900
+date: 2026-10-28 18:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /projects/fls9-youtube/plan/
 ---
 축구 유튜브 채널 **폴스나인(@fls9tv)**의 수익 승인(YPP)을 받는 프로젝트다. 끝나는 조건과 날짜가 분명해서 Projects에 둔다. 승인이 나면 Archives로 옮기고, 채널 운영은 Areas로 넘긴다.

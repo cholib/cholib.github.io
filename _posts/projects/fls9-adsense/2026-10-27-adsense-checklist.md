@@ -7,7 +7,8 @@ categories:
 tags: [fls9-adsense, 애드센스, AdSense, SEO, 프로젝트노트]
 description: >
   축구 분석 사이트 fls9.kr의 애드센스 승인 준비 — 목표, 점검표, 콘텐츠 원칙, 승인 뒤 계획.
-date: 2026-10-31 22:20:00 +0900
+date: 2026-10-27 12:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /projects/fls9-adsense/checklist/
 ---
 축구 분석 사이트 **fls9.kr**에 애드센스 승인을 받는 프로젝트다. 승인이 나면 끝이므로 Projects에 둔다.

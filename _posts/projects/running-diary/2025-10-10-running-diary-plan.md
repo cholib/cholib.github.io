@@ -7,7 +7,8 @@ categories:
 tags: [running-diary, Flutter, 러닝, VDOT, 앱개발, 프로젝트노트]
 description: >
   VDOT 기반 훈련 계획, 러닝 일지, 케이던스 메트로놈을 담는 Flutter 러닝 앱의 기획 정리.
-date: 2026-10-31 22:40:00 +0900
+date: 2025-10-10 12:00:00 +0900
+last_modified_at: 2026-10-31
 permalink: /projects/running-diary/plan/
 ---
 러닝 훈련을 계획하고 기록하는 한국어 앱 **러닝다이어리**의 기획 노트다. Flutter로 iOS·안드로이드를 함께 낸다.
