@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 4편 | Pages에 내 도메인 붙이기 — 루트와 www, SSL까지"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, CloudflarePages, dns, SSL, WWW, 커스텀도메인]
 description: >

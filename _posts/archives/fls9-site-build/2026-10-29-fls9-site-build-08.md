@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 8편 | 예약 발행 만들기 — GitHub Actions cron으로 매일 15시 재배포"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, cron, GithubActions, 예약발행, 자동화, 정적사이트]
 description: >

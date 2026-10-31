@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 3편 | Cloudflare Pages로 정적 사이트 배포하기 — GitHub 연결부터 첫 배포까지"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, CloudflarePages, Github, Python, 배포자동화, 정적사이트]
 description: >

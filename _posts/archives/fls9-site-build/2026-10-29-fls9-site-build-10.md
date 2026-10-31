@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 10편 | 하루 만에 블로그에서 사이트로 — 회고와 다음 계획"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, 개인프로젝트, 사이트제작, 자동화, 회고]
 description: >

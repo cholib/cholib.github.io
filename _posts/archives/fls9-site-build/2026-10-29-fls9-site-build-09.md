@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 9편 | 모바일에서 한글이 예쁘게 보이게 — 줄바꿈·표·읽기 진행 막대"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, CSS, UX, word-break, 모바일, 반응형, 한글줄바꿈]
 description: >

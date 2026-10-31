@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 2편 | 가비아 도메인을 Cloudflare로 옮기기 — 네임서버 변경"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, dns, DNSSEC, 가비아, 개인도메인, 네임서버]
 description: >

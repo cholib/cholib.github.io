@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 5편 | 무료로 contact@내도메인 메일 만들기 — Cloudflare Email Routing"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, EmailRouting, mx레코드, 도메인메일, 스팸방지]
 description: >

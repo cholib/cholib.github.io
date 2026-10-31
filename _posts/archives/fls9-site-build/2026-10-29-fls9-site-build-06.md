@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 6편 | 구글 서치콘솔·네이버 서치어드바이저에 새 도메인 등록하기"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, RSS, SEO, 네이버서치어드바이저, 사이트맵, 서치콘솔]
 description: >

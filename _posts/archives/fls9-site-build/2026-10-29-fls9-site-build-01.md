@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 1편 | 티스토리를 떠나 내 사이트를 만들기로 한 이유"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, 개인도메인, 사이트제작, 정적사이트, 티스토리]
 description: >

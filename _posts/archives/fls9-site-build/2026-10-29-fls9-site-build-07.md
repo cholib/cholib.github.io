@@ -2,7 +2,7 @@
 layout: post
 title: "폴스나인 사이트 제작기 7편 | 서버 없이 댓글·조회수 만들기 — Cloudflare Pages Functions + D1"
 categories:
-  - projects
+  - archives
   - fls9-site-build
 tags: [fls9-site-build, cloudflared1, PagesFunctions, 댓글, 서버리스, 스팸방지, 조회수]
 description: >
