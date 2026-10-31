@@ -36,7 +36,20 @@ header{position:sticky;top:0;z-index:5;background:var(--paper);padding:calc(10px
 .goals input{flex:1;border:0;border-bottom:1px dashed var(--grid);background:transparent;font:inherit;color:var(--ink);padding:2px 0}
 .goals input::placeholder{color:#b3ab98}
 section{display:none}
-body.v-today #vToday, body.v-sheet #vSheet{display:block}
+body.v-today #vToday, body.v-sheet #vSheet, body.v-year #vYear{display:block}
+#vYear{padding:12px 16px 0;max-width:640px;margin:0 auto}
+.ychips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin:0 -16px 6px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+.ychips::-webkit-scrollbar{display:none}
+.ychips .chip{flex:none;padding:6px 11px;font-size:13.5px}
+.ychips .chip.on{background:#2da44e;border-color:#2da44e}
+.ychips .chip.bad.on{background:#e5534b;border-color:#e5534b}
+.ychips .chip.num.on{background:#216e39;border-color:#216e39}
+.ygrid .mrow{height:17px}
+.ygrid .dc.none::after{display:none}
+.ystats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.ystats div{background:var(--sheet);border:1.5px solid var(--line);border-radius:12px;padding:8px 10px}
+.ystats b{display:block;font-size:20px;letter-spacing:-.5px}
+.ystats span{font-size:12px;color:var(--soft)}
 /* today */
 #vToday{padding:12px 16px 0;max-width:560px;margin:0 auto}
 .card{background:var(--sheet);border:2px solid var(--line);border-radius:16px;padding:12px;touch-action:pan-y}
@@ -173,6 +186,13 @@ body.v-sheet .bar #shareBtn{display:block}
   </div>
 </section>
 
+<section id="vYear">
+  <div class="ychips" id="ychips"></div>
+  <div class="mapbox ygrid"><div class="maphead"><b id="yTitle"></b><span>칸을 누르면 그날로</span></div><div id="ymap"></div></div>
+  <div class="ystats" id="ystats"></div>
+  <p class="hint" style="padding:8px 0 0">월마다 한 줄, 날짜는 가로(1~31일). 위에서 '하루 종합'이나 습관 하나를 고르면 그것만 1년치로 보여요.</p>
+</section>
+
 <section id="vSheet">
   <ul class="goals sheetgoals" id="goalsS"></ul>
   <div class="sheet"><table id="grid"></table></div>
@@ -182,7 +202,8 @@ body.v-sheet .bar #shareBtn{display:block}
 <div class="bar">
   <button id="tabToday" class="cur">오늘</button>
   <button id="tabSheet">한 장</button>
-  <button id="shareBtn" aria-label="이번 달 한 장 이미지">⤴︎ 이미지</button>
+  <button id="tabYear">1년</button>
+  <button id="shareBtn" aria-label="이번 달 한 장 이미지">⤴︎</button>
 </div>
 
 <div class="modal" id="dayModal"><div class="panel">
@@ -267,6 +288,7 @@ const live=arr=>arr.filter(isLive);
 const day=k=>S.days[k]||(S.days[k]={memo:'',n:{},h:{}});
 const peek=k=>S.days[k]||{memo:'',n:{},h:{}};
 const fmtNum=v=>v===''||v==null||isNaN(+v)?'':(+v%1?(+(+v).toFixed(2)).toString():String(+v));
+const startKey=()=>Object.keys(S.days).sort()[0]||TODAY; // 첫 기록일 — 그 전은 통계에서 뺌
 const cleanDay=k=>{const r=S.days[k]; if(r&&!r.memo&&!Object.keys(r.n||{}).length&&!Object.keys(r.h||{}).length) delete S.days[k]};
 
 /* ---------- 상태 ---------- */
@@ -288,8 +310,8 @@ function renderGoals(id){
 function render(){
   const v=view();
   document.body.className='v-'+v+(land.matches?' land':'');
-  $('tabToday').classList.toggle('cur',v==='today'); $('tabSheet').classList.toggle('cur',v==='sheet');
-  if(v==='today') renderToday(); else renderSheet();
+  $('tabToday').classList.toggle('cur',v==='today'); $('tabSheet').classList.toggle('cur',v==='sheet'); $('tabYear').classList.toggle('cur',v==='year');
+  if(v==='today') renderToday(); else if(v==='year') renderYear(); else renderSheet();
 }
 
 /* ---------- 오늘 화면 ---------- */
@@ -338,10 +360,10 @@ function renderMap(){
   const HM=S.habits.filter(x=>activeIn(x,k1,k2));
   let h=`<div class="mrow days" style="${cols}"><span></span>`+keys.map((k,i)=>`<span class="dc${cls(k)}${k===TODAY?' td':''}" data-k="${k}">${k===SEL||((i+1)%5==0||i==0)&&Math.abs(kDate(k)-kDate(SEL))>2*864e5?i+1:''}</span>`).join('')+`<span></span></div>`;
   // 하루 종합: 그날 쓰던 '늘리기' 습관 중 한 비율 → 잔디 진하기
-  let done=0, tot=0;
+  let done=0, tot=0; const ST=startKey();
   h+=`<div class="mrow sum" style="${cols}"><span class="ml">하루</span>`+keys.map(k=>{
       const G=HM.filter(x=>!x.bad&&activeOn(x,k)), r=peek(k), d=G.filter(x=>r.h[x.id]).length;
-      if(k<=TODAY){done+=d; tot+=G.length}
+      if(k<=TODAY&&k>=ST){done+=d; tot+=G.length}
       return `<span class="dc${cls(k)}${k<=TODAY&&G.length?lv(d/G.length):''}" data-k="${k}" title="${d}/${G.length}"></span>`}).join('')+
     `<span class="mc">${tot?Math.round(done/tot*100):0}%</span></div>`;
   for(const x of HM){
@@ -398,6 +420,7 @@ function renderSheet(){
 $('grid').addEventListener('click',e=>{
   const td=e.target.closest('td'); const tr=e.target.closest('tbody tr'); if(!td||!tr) return;
   const k=tr.dataset.k;
+  if(k>TODAY){toast('아직 오지 않은 날이에요');return}
   if(td.dataset.h){const r=day(k), id=td.dataset.h; if(r.h[id]) delete r.h[id]; else r.h[id]=true; cleanDay(k);
     save(); renderSheet(); if(navigator.vibrate) navigator.vibrate(8); return;}
   if(td.classList.contains('off')) return;
@@ -423,15 +446,72 @@ $('daySave').onclick=()=>{
 };
 $('dayModal').addEventListener('click',e=>{if(e.target.id==='dayModal')$('dayModal').classList.remove('open')});
 
+/* ---------- 1년 화면 ---------- */
+let METRIC='all';
+function renderYear(){
+  const y=selY(), k1=`${y}-01-01`, k2=`${y}-12-31`;
+  $('title').innerHTML=`${y}년<small>1년 한 장</small>`; $('next').disabled=false;
+  const HY=S.habits.filter(x=>activeIn(x,k1,k2)), NY=S.nums.filter(x=>activeIn(x,k1,k2));
+  if(METRIC!=='all'&&!HY.concat(NY).some(x=>x.id===METRIC)) METRIC='all';
+  $('ychips').innerHTML=`<button class="chip${METRIC==='all'?' on':''}" data-m="all">하루 종합</button>`+
+    HY.map(x=>`<button class="chip${x.bad?' bad':''}${METRIC===x.id?' on':''}" data-m="${x.id}">${esc(x.name)}</button>`).join('')+
+    NY.map(x=>`<button class="chip num${METRIC===x.id?' on':''}" data-m="${x.id}">${esc(x.name)}${x.unit?` (${esc(x.unit)})`:''}</button>`).join('');
+  const X=findX(METRIC), isNum=X&&S.nums.includes(X);
+  $('yTitle').textContent=METRIC==='all'?'하루 종합 (늘리기 습관 중 한 비율)':`${X.name}${isNum&&X.unit?` (${X.unit})`:''}`;
+  const lv=f=>f<=0?'':f<.25?' l1':f<.5?' l2':f<.75?' l3':' l4';
+  let ymax=0; if(isNum) for(const [k,r] of Object.entries(S.days)) if(k>=k1&&k<=k2&&r.n[X.id]) ymax=Math.max(ymax,+r.n[X.id]);
+  const cols=`grid-template-columns:34px repeat(31,1fr) 40px`;
+  let h=`<div class="mrow days" style="${cols}"><span></span>`+[...Array(31)].map((_,i)=>`<span class="dc">${(i+1)%5==0||i==0?i+1:''}</span>`).join('')+`<span></span></div>`;
+  const ST=startKey(); let Y_done=0,Y_tot=0,Y_sum=0,Y_days=0,Y_max=0, run=0,best=0,cur=0;
+  for(let m=0;m<12;m++){
+    const n=new Date(y,m+1,0).getDate(); let mDone=0,mTot=0,mSum=0;
+    h+=`<div class="mrow" style="${cols}"><span class="ml">${m+1}월</span>`;
+    for(let d=1;d<=31;d++){
+      if(d>n){h+=`<span class="dc none"></span>`;continue}
+      const k=keyOf(y,m,d), r=peek(k), past=k<=TODAY&&k>=ST; let c=' dc'+(k===SEL?' sel':'')+(past?'':' fut');
+      if(METRIC==='all'){
+        const G=S.habits.filter(x=>!x.bad&&activeOn(x,k)), dn=G.filter(x=>r.h[x.id]).length;
+        if(past&&G.length){mDone+=dn;mTot+=G.length;c+=lv(dn/G.length)}
+      }else if(isNum){
+        const v=+r.n[X.id]||0; if(!activeOn(X,k)) c+=' off'; else if(past&&v){mSum+=v;Y_days++;Y_max=Math.max(Y_max,v);c+=lv(Math.min(.99,v/ymax-.001)||.01)}
+      }else{
+        const on=!!r.h[X.id];
+        if(!activeOn(X,k)){c+=' off'; if(past) run=0}
+        else if(past){mTot++; if(on){mDone++;c+=' on'+(X.bad?' bad':'');run++;best=Math.max(best,run)} else run=0}
+      }
+      h+=`<span class="${c.trim()}" data-k="${k}"></span>`;
+    }
+    Y_done+=mDone;Y_tot+=mTot;Y_sum+=mSum;
+    const right=METRIC==='all'?(mTot?Math.round(mDone/mTot*100)+'%':''):isNum?(mSum?fmtNum(Math.round(mSum*10)/10):''):(mTot?mDone:'');
+    h+=`<span class="mc${X&&X.bad?' bad':''}">${right}</span></div>`;
+  }
+  if(X&&!isNum){ // 현재 연속: 오늘(또는 어제)부터 거꾸로
+    let k=peek(TODAY).h[X.id]?TODAY:addDays(TODAY,-1); while(k>=k1&&k>=ST&&activeOn(X,k)&&peek(k).h[X.id]){cur++;k=addDays(k,-1)} }
+  h+=`<div class="legend">적음 <i style="background:#ebedf0"></i><i style="background:#9be9a8"></i><i style="background:#40c463"></i><i style="background:#30a14e"></i><i style="background:#216e39"></i> 많음</div>`;
+  $('ymap').innerHTML=h;
+  const card=(v,t)=>`<div><b>${v}</b><span>${t}</span></div>`;
+  let st='';
+  if(METRIC==='all') st=card(Y_tot?Math.round(Y_done/Y_tot*100)+'%':'—','올해 달성률 (첫 기록일부터)')+card(Object.keys(S.days).filter(k=>k>=k1&&k<=k2&&k<=TODAY).length+'일','기록한 날');
+  else if(isNum) st=card(fmtNum(Math.round(Y_sum*10)/10)+(X.unit||''),'올해 합계')+card(Y_days+'일','기록한 날')+
+    card(Y_days?fmtNum(Math.round(Y_sum/Y_days*10)/10)+(X.unit||''):'—','기록한 날 평균')+card(Y_max?fmtNum(Y_max)+(X.unit||''):'—','하루 최고');
+  else st=card(Y_done+'번',X.bad?'올해 한 횟수 (적을수록 좋아요)':'올해 한 횟수')+card(Y_tot?Math.round(Y_done/Y_tot*100)+'%':'—','쓰던 날 중 한 비율')+
+    card(best+'일','최장 연속')+card(cur+'일','지금 연속');
+  $('ystats').innerHTML=st;
+}
+$('ychips').addEventListener('click',e=>{const b=e.target.closest('[data-m]'); if(!b) return; METRIC=b.dataset.m; renderYear()});
+$('ymap').addEventListener('click',e=>{const c=e.target.closest('[data-k]'); if(!c) return; const k=c.dataset.k;
+  if(k>TODAY){toast('아직 오지 않은 날이에요');return} SEL=k; VIEW='today'; render(); scrollTo(0,0)});
+
 /* ---------- 이동 ---------- */
 function moveMonth(d){
-  let y=selY(), m=selM()+d; if(m<0){m=11;y--} if(m>11){m=0;y++}
+  let y=selY(), m=selM()+d; while(m<0){m+=12;y--} while(m>11){m-=12;y++}
   const n=new Date(y,m+1,0).getDate(); SEL=keyOf(y,m,Math.min(kDate(SEL).getDate(),n)); render();
 }
-$('prev').onclick=()=>view()==='today'?moveDay(-1):moveMonth(-1);
-$('next').onclick=()=>view()==='today'?moveDay(1):moveMonth(1);
+$('prev').onclick=()=>view()==='today'?moveDay(-1):view()==='year'?moveMonth(-12):moveMonth(-1);
+$('next').onclick=()=>view()==='today'?moveDay(1):view()==='year'?moveMonth(12):moveMonth(1);
 $('tabToday').onclick=()=>{VIEW='today'; if(SEL>TODAY) SEL=TODAY; render()};
 $('tabSheet').onclick=()=>{VIEW='sheet'; render()};
+$('tabYear').onclick=()=>{VIEW='year'; render()};
 land.addEventListener('change',render);
 
 /* ---------- 설정 ---------- */
