@@ -43,7 +43,7 @@ thead th{border-bottom:2px solid var(--line);height:auto;vertical-align:bottom;p
 .c-memo{text-align:left;padding:0 6px;max-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
 .c-num{width:40px;text-align:right;padding-right:4px;font-weight:700;color:var(--accent);border-right:2px solid var(--line);cursor:pointer;white-space:nowrap}
 .c-h{width:var(--cell);border-left:1px solid var(--line);text-align:center;cursor:pointer;position:relative}
-thead .c-h{writing-mode:vertical-rl;text-orientation:upright;font-size:12px;letter-spacing:-1px;line-height:1.1;padding:4px 0;height:84px;vertical-align:bottom}
+thead .c-h{writing-mode:vertical-rl;text-orientation:upright;font-size:12px;letter-spacing:-1px;line-height:1.05;padding:4px 0;height:92px;vertical-align:bottom;white-space:nowrap;overflow:hidden}
 thead .c-h.bad{color:var(--bad)}
 td.c-h.on::after{content:"";position:absolute;inset:3px;background:var(--fill);border-radius:3px}
 td.c-h.on.bad::after{background:var(--bad)}
@@ -167,7 +167,7 @@ function render(){
   renderGoals();
   const n=new Date(Y,M+1,0).getDate(); const H=S.habits;
   let h=`<thead><tr><th class="c-day"></th><th class="c-wk"></th><th class="c-memo"></th><th class="c-num" style="font-size:11px">${esc(S.numName.replace(/\s*\(.*\)/,''))}</th>`+
-    H.map(x=>`<th class="c-h${x.bad?' bad':''}">${esc(x.name.replace(/\s+/g,''))}</th>`).join('')+`</tr></thead><tbody>`;
+    H.map(x=>{const n=x.name.replace(/\s+/g,''),L=[...n].length,fs=L<=5?12:Math.max(8,Math.floor(66/L));return `<th class="c-h${x.bad?' bad':''}" style="font-size:${fs}px" title="${esc(x.name)}">${esc(n)}</th>`}).join('')+`</tr></thead><tbody>`;
   const cnt=H.map(()=>0); let sum=0;
   for(let d=1;d<=n;d++){
     const k=dkey(d), r=S.days[k]||{memo:'',num:'',h:{}}, w=new Date(Y,M,d).getDay();
