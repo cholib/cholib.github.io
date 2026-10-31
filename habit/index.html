@@ -231,6 +231,21 @@ body.v-sheet .bar #shareBtn{display:block}
   <p class="small">'빼기': 기록이 없으면 바로 지워지고, 기록이 있으면 보관함으로 가요(지난 기록 유지). 보관함에서 '다시 쓰기' 또는 '삭제'(기록까지 완전 삭제)를 고를 수 있어요.<br>기록은 이 휴대폰(브라우저)에만 저장됩니다. 한 달에 한 번 백업 파일을 저장해 두세요.<br>휴대폰을 가로로 돌리면 종이 같은 한 장 표가 나옵니다.</p>
   <div class="row"><button class="primary" id="setClose">저장하고 닫기</button></div>
 </div></div>
+<div class="modal" id="obModal"><div class="panel">
+  <h2>한 장 습관표</h2>
+  <p class="small" style="margin:0">종이 한 장에 쓰던 습관표를 휴대폰으로. 하루 한 번, 칸만 칠하면 됩니다.</p>
+  <label>늘리고 싶은 습관 <span id="obCount"></span></label>
+  <div class="chips" id="obGood"></div>
+  <label>줄이고 싶은 습관 (빨간 칸)</label>
+  <div class="chips" id="obBad"></div>
+  <label>직접 쓰기</label>
+  <div class="hl" style="display:flex;gap:6px;border:0;padding:0;background:none"><input type="text" id="obCustom" maxlength="10" placeholder="예: 기타 연습"><button class="chip" id="obAddG" style="flex:none;white-space:nowrap">늘리기</button><button class="chip" id="obAddB" style="flex:none;white-space:nowrap;color:var(--bad);border-color:var(--bad)">줄이기</button></div>
+  <label>숫자로 적을 것 (하나 고르기)</label>
+  <div class="chips" id="obNum"></div>
+  <p class="small" id="obInstall" style="display:none;margin-top:14px;padding:10px;border:1.5px dashed var(--line);border-radius:10px">📌 <b>홈 화면에 추가</b>해서 쓰세요. 사파리 아래 공유 버튼 → '홈 화면에 추가'. 앱처럼 열리고, 기록도 더 안전하게 보관돼요.</p>
+  <p class="small" style="margin-top:10px">기록은 이 휴대폰 안에만 저장되고 어디로도 보내지 않아요. 가입도 필요 없어요. 습관은 나중에 ⚙︎ 설정에서 바꿀 수 있어요.</p>
+  <div class="row"><button class="primary" id="obStart" disabled>시작하기</button></div>
+</div></div>
 <div class="toast" id="toast"></div>
 <canvas id="cv" hidden></canvas>
 
@@ -277,9 +292,10 @@ function migrate(d){
 let S=null;
 try{S=migrate(JSON.parse(localStorage.getItem(KEY)))}catch(e){}
 if(!S){try{S=migrate(JSON.parse(localStorage.getItem(OLD)))}catch(e){}}
+const FIRST=!S;
 if(!S) S=DEFAULT();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){toast('저장 실패 — 백업 파일로 보관하세요')}};
-save();
+if(!FIRST) save();
 
 const activeOn=(x,k)=>x.spans.some(([a,b])=>(!a||a<=k)&&(!b||k<=b));
 const activeIn=(x,k1,k2)=>x.spans.some(([a,b])=>(!a||a<=k2)&&(!b||b>=k1));
@@ -651,6 +667,36 @@ $('shareBtn').onclick=async()=>{
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); toast('이미지를 저장했어요');
 };
 window.__hanjang={state:()=>S,makeImage,setSel:k=>{SEL=k;render()}};
+
+/* ---------- 처음 쓰는 사람: 습관 고르기 ---------- */
+const OB_G=['일찍 자기','달리기','걷기','근력 운동','스트레칭','독서','일기','물 2L','명상','영어 공부','영양제','정리 정돈'];
+const OB_B=['야식','라면','술','담배','배달 음식','늦잠','과자','유튜브 오래'];
+const OB_N=[['없음',''],['달리기','km'],['걷기','보'],['독서','쪽'],['몸무게','kg'],['공부','시간']];
+let obSel=[], obNum=1;
+function renderOb(){
+  const chip=(name,bad)=>{const on=obSel.some(x=>x.name===name);return `<button class="chip${bad?' bad':''}${on?' on':''}" data-name="${esc(name)}" data-bad="${bad?1:''}">${esc(name)}</button>`};
+  const customG=obSel.filter(x=>!x.bad&&!OB_G.includes(x.name)).map(x=>x.name), customB=obSel.filter(x=>x.bad&&!OB_B.includes(x.name)).map(x=>x.name);
+  $('obGood').innerHTML=[...OB_G,...customG].map(n=>chip(n,false)).join('');
+  $('obBad').innerHTML=[...OB_B,...customB].map(n=>chip(n,true)).join('');
+  $('obNum').innerHTML=OB_N.map(([n,u],i)=>`<button class="chip${obNum===i?' on':''}" data-i="${i}">${n}${u?` (${u})`:''}</button>`).join('');
+  $('obCount').textContent=`· ${obSel.length}/${MAXH}`;
+  $('obStart').disabled=!obSel.length;
+}
+function obToggle(name,bad){const i=obSel.findIndex(x=>x.name===name); if(i>=0) obSel.splice(i,1); else{ if(obSel.length>=MAXH){toast(`습관은 ${MAXH}개까지예요`);return} obSel.push({name,bad})} renderOb()}
+['obGood','obBad'].forEach(id=>$(id).addEventListener('click',e=>{const b=e.target.closest('[data-name]'); if(b) obToggle(b.dataset.name,!!b.dataset.bad)}));
+$('obNum').addEventListener('click',e=>{const b=e.target.closest('[data-i]'); if(b){obNum=+b.dataset.i; renderOb()}});
+const obAdd=bad=>{const v=$('obCustom').value.trim(); if(!v) return; if(!obSel.some(x=>x.name===v)) obToggle(v,bad); $('obCustom').value=''};
+$('obAddG').onclick=()=>obAdd(false); $('obAddB').onclick=()=>obAdd(true);
+$('obStart').onclick=()=>{
+  S.habits=[...obSel.filter(x=>!x.bad),...obSel.filter(x=>x.bad)].map(x=>({id:uid('h'),name:x.name,bad:x.bad,spans:[[null,null]]}));
+  const [n,u]=OB_N[obNum]; S.nums=n&&u?[{id:uid('n'),name:n,unit:u,spans:[[null,null]]}]:[];
+  save(); $('obModal').classList.remove('open'); render(); toast('시작! 오늘 한 것을 눌러 보세요');
+};
+if(FIRST){
+  const standalone=navigator.standalone||matchMedia('(display-mode: standalone)').matches;
+  if(!standalone) $('obInstall').style.display='';
+  renderOb(); $('obModal').classList.add('open');
+}
 
 render();
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
