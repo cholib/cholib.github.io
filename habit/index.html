@@ -193,7 +193,7 @@ body.v-sheet .bar #shareBtn{display:block}
 </div></div>
 
 <div class="modal" id="setModal"><div class="panel">
-  <h2>설정</h2>
+  <h2>설정 <span class="small" style="font-weight:500">· 바꾸는 즉시 저장돼요</span></h2>
   <label>습관 (최대 8개 · '줄이기'는 빨간 칸)</label>
   <div id="habitList"></div>
   <button class="chip" id="addHabit" style="margin-top:6px">+ 습관 추가</button>
@@ -204,8 +204,8 @@ body.v-sheet .bar #shareBtn{display:block}
   <label>백업</label>
   <div class="row" style="margin-top:4px"><button id="exportBtn">백업 파일 저장</button><button id="importBtn">백업 불러오기</button></div>
   <input type="file" id="importFile" accept="application/json,.json" hidden>
-  <p class="small">'보관'하면 그날부터 표에서 빠지지만 지난 기록은 그대로 남아요. 보관함에서 다시 쓸 수 있어요.<br>기록은 이 휴대폰(브라우저)에만 저장됩니다. 한 달에 한 번 백업 파일을 저장해 두세요.<br>휴대폰을 가로로 돌리면 종이 같은 한 장 표가 나옵니다.</p>
-  <div class="row"><button class="primary" id="setClose">완료</button></div>
+  <p class="small">'빼기': 기록이 없으면 바로 지워지고, 기록이 있으면 보관함으로 가요(지난 기록 유지). 보관함에서 '다시 쓰기' 또는 '삭제'(기록까지 완전 삭제)를 고를 수 있어요.<br>기록은 이 휴대폰(브라우저)에만 저장됩니다. 한 달에 한 번 백업 파일을 저장해 두세요.<br>휴대폰을 가로로 돌리면 종이 같은 한 장 표가 나옵니다.</p>
+  <div class="row"><button class="primary" id="setClose">저장하고 닫기</button></div>
 </div></div>
 <div class="toast" id="toast"></div>
 <canvas id="cv" hidden></canvas>
@@ -430,20 +430,21 @@ function renderSettings(){
   $('habitList').innerHTML=LH.map(x=>`<div class="hl" data-id="${x.id}">
     <div class="l1"><input type="text" data-f="name" value="${esc(x.name)}" maxlength="10">
     <button class="tg${x.bad?' bad':''}" data-act="bad">${x.bad?'줄이기':'늘리기'}</button>
-    <button data-act="up" aria-label="위로">↑</button><button data-act="arch">보관</button></div>
+    <button data-act="up" aria-label="위로">↑</button><button data-act="arch">빼기</button></div>
     <div class="l2">시작일 <input type="date" data-f="from" value="${since(x)||''}" max="${TODAY}"> ${since(x)?'':'<span>(처음부터)</span>'}</div></div>`).join('');
   $('addHabit').style.display=LH.length>=MAXH?'none':'';
   $('numList').innerHTML=LN.map(x=>`<div class="hl" data-id="${x.id}" data-kind="num">
     <div class="l1"><input type="text" data-f="name" value="${esc(x.name)}" maxlength="10" placeholder="이름">
     <input type="text" class="unit" data-f="unit" value="${esc(x.unit)}" maxlength="4" placeholder="단위">
-    <button data-act="arch">보관</button></div>
+    <button data-act="arch">빼기</button></div>
     <div class="l2">시작일 <input type="date" data-f="from" value="${since(x)||''}" max="${TODAY}"> ${since(x)?'':'<span>(처음부터)</span>'}</div></div>`).join('');
   $('addNum').style.display=LN.length>=MAXN?'none':'';
   const AH=S.habits.filter(x=>!isLive(x)), AN=S.nums.filter(x=>!isLive(x));
   $('archBox').innerHTML=(AH.length||AN.length)?`<label>보관함 (지난 기록은 그대로 있어요)</label>`+
     [...AH.map(x=>[x,'h']),...AN.map(x=>[x,'n'])].map(([x,t])=>{const b=x.spans[x.spans.length-1][1];
-      return `<div class="arch" data-id="${x.id}" data-kind="${t}"><span>${esc(x.name)}${t=='n'&&x.unit?` (${esc(x.unit)})`:''}<small>${mmdd(b)}까지</small></span><button data-act="restore">다시 쓰기</button></div>`}).join(''):'';
+      return `<div class="arch" data-id="${x.id}" data-kind="${t}"><span>${esc(x.name)}${t=='n'&&x.unit?` (${esc(x.unit)})`:''}<small>${mmdd(b)}까지</small></span><span><button data-act="restore">다시 쓰기</button> <button data-act="purge" style="color:var(--bad);border-color:var(--bad)">삭제</button></span></div>`}).join(''):'';
 }
+const recCount=id=>Object.values(S.days).filter(r=>r.h[id]||r.n[id]!=null).length;
 const findX=(id)=>S.habits.find(x=>x.id===id)||S.nums.find(x=>x.id===id);
 const listOf=(id)=>S.habits.some(x=>x.id===id)?S.habits:S.nums;
 ['habitList','numList'].forEach(L=>{
@@ -459,8 +460,12 @@ const listOf=(id)=>S.habits.some(x=>x.id===id)?S.habits:S.nums;
     if(a==='bad') x.bad=!x.bad;
     if(a==='up'){ // 보관된 것은 건너뛰고 바로 위의 쓰는 항목과 자리 바꾸기
       const i=arr.indexOf(x); let j=i-1; while(j>=0&&!isLive(arr[j])) j--; if(j>=0){arr[i]=arr[j];arr[j]=x} }
+    if(a==='arch'&&!recCount(x.id)){
+      if(!confirm(`'${x.name}'을(를) 지울까요?\n아직 기록이 없어서 바로 지워져요.`)) return;
+      arr.splice(arr.indexOf(x),1); save(); renderSettings(); toast('지웠어요'); return;
+    }
     if(a==='arch'){
-      if(!confirm(`'${x.name}'을(를) 보관할까요?\n오늘부터 표에서 빠지고, 지난 기록은 그대로 남아요. 보관함에서 다시 쓸 수 있어요.`)) return;
+      if(!confirm(`'${x.name}'을(를) 보관함으로 옮길까요?\n오늘부터 표에서 빠지고, 지난 기록 ${recCount(x.id)}일치는 그대로 남아요.\n보관함에서 다시 쓰거나 완전히 지울 수 있어요.`)) return;
       const sp=x.spans[x.spans.length-1], end=addDays(TODAY,-1);
       if(sp[0]&&sp[0]>end){ x.spans.pop();
         // 오늘 시작해서 바로 뺀 항목: 기록 정리
@@ -471,8 +476,14 @@ const listOf=(id)=>S.habits.some(x=>x.id===id)?S.habits:S.nums;
     save(); renderSettings();
   });
 });
-$('archBox').addEventListener('click',e=>{const b=e.target.closest('button[data-act=restore]'); if(!b) return;
+$('archBox').addEventListener('click',e=>{const b=e.target.closest('button[data-act]'); if(!b) return;
   const row=b.closest('.arch'), x=findX(row.dataset.id), kind=row.dataset.kind;
+  if(b.dataset.act==='purge'){
+    const n=recCount(x.id);
+    if(!confirm(`'${x.name}'을(를) 완전히 지울까요?\n기록 ${n}일치도 같이 지워지고 되돌릴 수 없어요.\n(걱정되면 먼저 '백업 파일 저장'을 하세요)`)) return;
+    for(const k of Object.keys(S.days)){const r=S.days[k]; delete r.h[x.id]; delete r.n[x.id]; cleanDay(k)}
+    const arr=listOf(x.id); arr.splice(arr.indexOf(x),1); save(); renderSettings(); toast('지웠어요'); return;
+  }
   if(kind==='h'&&live(S.habits).length>=MAXH){toast(`습관은 ${MAXH}개까지예요. 하나를 먼저 보관하세요`);return}
   if(kind==='n'&&live(S.nums).length>=MAXN){toast(`숫자 칸은 ${MAXN}개까지예요`);return}
   const last=x.spans[x.spans.length-1]; if(last[1]>=TODAY) last[1]=null; else x.spans.push([TODAY,null]);
@@ -482,7 +493,7 @@ $('addHabit').onclick=()=>{ if(live(S.habits).length>=MAXH) return; S.habits.pus
 $('addNum').onclick=()=>{ if(live(S.nums).length>=MAXN) return; S.nums.push({id:uid('n'),name:'',unit:'',spans:[[TODAY,null]]}); save(); renderSettings();
   const ins=$('numList').querySelectorAll('input[data-f=name]'); const l=ins[ins.length-1]; if(l) l.focus()};
 $('openSettings').onclick=()=>{renderSettings(); $('setModal').classList.add('open')};
-const closeSet=()=>{S.nums.forEach(x=>{if(!x.name) x.name='숫자'}); save(); $('setModal').classList.remove('open'); render()};
+const closeSet=()=>{S.nums.forEach(x=>{if(!x.name) x.name='숫자'}); save(); $('setModal').classList.remove('open'); render(); toast('저장했어요')};
 $('setClose').onclick=closeSet;
 $('setModal').addEventListener('click',e=>{if(e.target.id==='setModal') closeSet()});
 $('exportBtn').onclick=()=>{
