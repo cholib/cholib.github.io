@@ -25,7 +25,7 @@ body{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gr
 body.land{padding-bottom:16px}
 header{position:sticky;top:0;z-index:5;background:var(--paper);padding:calc(10px + env(safe-area-inset-top)) 16px 8px;border-bottom:2px solid var(--line)}
 .top{display:flex;align-items:center;gap:8px}
-.top h1{font-size:26px;margin:0;font-weight:800;letter-spacing:-1px;flex:1;white-space:nowrap;overflow:hidden}
+.top h1{font-size:24px;margin:0;font-weight:800;letter-spacing:-1px;flex:1;white-space:nowrap;overflow:hidden}
 .top h1 small{font-size:15px;font-weight:600;color:var(--soft);margin-left:4px}
 .top h1 .go{font-size:12px;font-weight:700;border:1.5px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle;background:var(--sheet);cursor:pointer}
 .icon-btn{border:1.5px solid var(--line);background:var(--sheet);border-radius:10px;width:38px;height:38px;font-size:18px;color:var(--ink);flex:none}
@@ -43,8 +43,8 @@ body.v-today #vToday, body.v-sheet #vSheet{display:block}
 .hbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .hb{height:48px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:16px;font-weight:700;color:var(--ink);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hb.bad{color:var(--bad);border-color:var(--bad)}
-.hb.on{background:var(--ink);color:#fff}
-.hb.bad.on{background:var(--bad);color:#fff}
+.hb.on{background:#2da44e;border-color:#2da44e;color:#fff}
+.hb.bad.on{background:#e5534b;border-color:#e5534b;color:#fff}
 .hb:disabled{opacity:.35}
 .nrow{display:flex;align-items:center;gap:8px;margin-top:10px}
 .nrow .nl{flex:1;font-weight:700;color:var(--accent);font-size:15px}
@@ -57,27 +57,30 @@ body.v-today #vToday, body.v-sheet #vSheet{display:block}
 .maphead{display:flex;align-items:baseline;justify-content:space-between;margin:0 2px 6px}
 .maphead b{font-size:15px}
 .maphead span{font-size:11.5px;color:var(--soft)}
-.mrow{display:grid;align-items:stretch;height:22px}
-.mrow .ml{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:clip;align-self:center;padding-right:2px}
+.mrow{display:grid;align-items:center;height:15px;margin-bottom:2px}
+.mrow .ml{min-width:0;font-size:11px;letter-spacing:-.3px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:clip;padding-right:2px;color:#57606a}
 .mrow .ml.bad{color:var(--bad)}
-.mrow .mc{font-size:12px;font-weight:800;text-align:right;align-self:center}
+.mrow .mc{min-width:0;white-space:nowrap;font-size:11.5px;font-weight:800;text-align:right;color:#57606a}
 .mrow .mc.bad{color:var(--bad)}
-.dc{position:relative;cursor:pointer}
-.dc.we{background:rgba(0,0,0,.035)}
-.dc.sel{background:var(--today)}
-.dc::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;border:1px solid #c9c1ad}
-.dc.on::after{background:var(--ink);border-color:var(--ink);width:8px;height:8px;margin:-4px 0 0 -4px}
-.dc.on.bad::after{background:var(--bad);border-color:var(--bad)}
-.dc.off::after{border:0;background:var(--off);border-radius:0;height:2px;width:100%;left:0;margin:-1px 0 0 0}
-.dc.fut::after{border-color:transparent}
-.mrow.days{height:16px}
-.mrow.days .dc{font-size:8.5px;color:var(--soft);text-align:center;line-height:16px}
+.dc{position:relative;cursor:pointer;height:100%}
+.dc::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(11px,calc(100% - 2px));aspect-ratio:1;border-radius:2px;
+  background:#ebedf0;outline:1px solid rgba(27,31,36,.06);outline-offset:-1px}
+.dc.l1::after{background:#9be9a8}.dc.l2::after{background:#40c463}.dc.l3::after{background:#30a14e}.dc.l4::after{background:#216e39}
+.dc.on::after{background:#40c463}
+.dc.on.bad::after{background:#e5534b}
+.dc.off::after{background:transparent;outline:0;height:1px;aspect-ratio:auto;border-radius:0;background:#d0d7de}
+.dc.fut::after{background:transparent;outline:1px dashed #d8dee4}
+.dc.sel::after{box-shadow:0 0 0 1.5px #1f2328}
+.mrow.days{height:13px;margin-bottom:3px}
+.mrow.days .dc{font-size:8.5px;color:#8c959f;text-align:center;line-height:13px}
 .mrow.days .dc::after{display:none}
-.mrow.days .dc.td{color:var(--ink);font-weight:800}
-.mrow.nums{height:28px;margin-top:4px}
-.mrow.nums .dc::after{display:none}
-.bar-v{position:absolute;left:15%;right:15%;bottom:3px;background:var(--accent);border-radius:2px 2px 0 0}
-.mrow.nums .mc,.mrow.nums .ml{color:var(--accent)}
+.mrow.days .dc.td,.mrow.days .dc.sel{color:#1f2328;font-weight:800}
+.mrow.sum{margin-bottom:6px;padding-bottom:6px;border-bottom:1px dashed var(--grid);height:21px}
+.mrow.sum .ml,.mrow.sum .mc{color:#1f2328}
+.mrow.nums{margin-top:4px}
+.mrow.nums .ml,.mrow.nums .mc{color:#216e39}
+.legend{display:flex;align-items:center;justify-content:flex-end;gap:3px;font-size:10.5px;color:#57606a;margin-top:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block;outline:1px solid rgba(27,31,36,.06);outline-offset:-1px}
 .mapgoals{border-top:1px dashed var(--grid);margin-top:8px;padding-top:4px}
 /* sheet */
 #vSheet{padding:0 0 12px}
@@ -328,24 +331,33 @@ $('title').addEventListener('click',e=>{if(e.target.id==='goToday'){SEL=TODAY;re
 function renderMap(){
   const y=selY(), m=selM(), n=monthLen(), k1=keyOf(y,m,1), k2=keyOf(y,m,n);
   $('mapTitle').textContent=`${m+1}월 한눈에`;
-  const cols=`grid-template-columns:44px repeat(${n},1fr) 30px`;
+  const cols=`grid-template-columns:46px repeat(${n},1fr) 40px`;
   const keys=[...Array(n)].map((_,i)=>keyOf(y,m,i+1));
-  const we=keys.map(k=>{const w=kDate(k).getDay();return w==0||w==6});
-  const cls=(k,i)=>(we[i]?' we':'')+(k===SEL?' sel':'')+(k>TODAY?' fut':'');
-  let h=`<div class="mrow days" style="${cols}"><span></span>`+keys.map((k,i)=>`<span class="dc${cls(k,i)}${k===TODAY?' td':''}" data-k="${k}">${k===SEL||((i+1)%5==0||i==0)&&Math.abs(kDate(k)-kDate(SEL))>2*864e5?i+1:''}</span>`).join('')+`<span></span></div>`;
-  for(const x of S.habits.filter(x=>activeIn(x,k1,k2))){
+  const cls=k=>(k===SEL?' sel':'')+(k>TODAY?' fut':'');
+  const lv=f=>f<=0?'':f<.25?' l1':f<.5?' l2':f<.75?' l3':' l4';
+  const HM=S.habits.filter(x=>activeIn(x,k1,k2));
+  let h=`<div class="mrow days" style="${cols}"><span></span>`+keys.map((k,i)=>`<span class="dc${cls(k)}${k===TODAY?' td':''}" data-k="${k}">${k===SEL||((i+1)%5==0||i==0)&&Math.abs(kDate(k)-kDate(SEL))>2*864e5?i+1:''}</span>`).join('')+`<span></span></div>`;
+  // 하루 종합: 그날 쓰던 '늘리기' 습관 중 한 비율 → 잔디 진하기
+  let done=0, tot=0;
+  h+=`<div class="mrow sum" style="${cols}"><span class="ml">하루</span>`+keys.map(k=>{
+      const G=HM.filter(x=>!x.bad&&activeOn(x,k)), r=peek(k), d=G.filter(x=>r.h[x.id]).length;
+      if(k<=TODAY){done+=d; tot+=G.length}
+      return `<span class="dc${cls(k)}${k<=TODAY&&G.length?lv(d/G.length):''}" data-k="${k}" title="${d}/${G.length}"></span>`}).join('')+
+    `<span class="mc">${tot?Math.round(done/tot*100):0}%</span></div>`;
+  for(const x of HM){
     let c=0;
     h+=`<div class="mrow" style="${cols}"><span class="ml${x.bad?' bad':''}">${esc(x.name.replace(/\s+/g,'').slice(0,4))}</span>`+
-      keys.map((k,i)=>{const on=!!peek(k).h[x.id]; if(on)c++; const off=!activeOn(x,k);
-        return `<span class="dc${cls(k,i)}${x.bad?' bad':''}${on?' on':''}${off?' off':''}" data-k="${k}"></span>`}).join('')+
+      keys.map(k=>{const on=!!peek(k).h[x.id]; if(on)c++; const off=!activeOn(x,k);
+        return `<span class="dc${cls(k)}${x.bad?' bad':''}${on?' on':''}${off?' off':''}" data-k="${k}"></span>`}).join('')+
       `<span class="mc${x.bad?' bad':''}">${c}</span></div>`;
   }
   for(const x of S.nums.filter(x=>activeIn(x,k1,k2))){
-    const vals=keys.map(k=>+peek(k).n[x.id]||0), mx=Math.max(...vals,1), sum=vals.reduce((a,b)=>a+b,0);
+    const vals=keys.map(k=>+peek(k).n[x.id]||0), mx=Math.max(...vals,0), sum=vals.reduce((a,b)=>a+b,0);
     h+=`<div class="mrow nums" style="${cols}"><span class="ml">${esc(x.name.slice(0,4))}</span>`+
-      keys.map((k,i)=>`<span class="dc${cls(k,i)}" data-k="${k}">${vals[i]?`<i class="bar-v" style="height:${Math.max(2,Math.round(vals[i]/mx*20))}px"></i>`:''}</span>`).join('')+
-      `<span class="mc" style="font-size:11px">${fmtNum(Math.round(sum*10)/10)}</span></div>`;
+      keys.map((k,i)=>`<span class="dc${cls(k)}${vals[i]&&mx?lv(Math.min(.99,vals[i]/mx-.001)||.01):''}${!activeOn(x,k)?' off':''}" data-k="${k}" title="${fmtNum(vals[i])}"></span>`).join('')+
+      `<span class="mc" style="font-size:10.5px">${fmtNum(Math.round(sum*10)/10)}<small style="font-weight:600">${esc(x.unit)}</small></span></div>`;
   }
+  h+=`<div class="legend">적음 <i style="background:#ebedf0"></i><i style="background:#9be9a8"></i><i style="background:#40c463"></i><i style="background:#30a14e"></i><i style="background:#216e39"></i> 많음</div>`;
   $('map').innerHTML=h;
   renderGoals('goalsT');
 }
