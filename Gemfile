@@ -10,7 +10,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.3"
 
-gem "jekyll-theme-hydejack", path: "./#jekyll-theme-hydejack"
+gem "jekyll-remote-theme"  # 테마는 _config.yml 의 remote_theme(hydecorp/hydejack@v9.1.4)로 불러옴
 
 # If you are part of the ["Customers" team](https://github.com/orgs/hydecorp/teams/pro-customers), 
 # you can fetch the theme from a private repository. 
