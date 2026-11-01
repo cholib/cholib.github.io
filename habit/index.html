@@ -141,6 +141,8 @@ body.v-sheet .bar #shareBtn{display:block}
 .chip{border:1.5px solid var(--line);border-radius:999px;padding:8px 12px;font-size:15px;background:#fff;color:var(--ink)}
 .chip.on{background:var(--ink);color:#fff}
 .chip.bad.on{background:var(--bad);border-color:var(--bad)}
+.chip.edit{border-style:dashed}
+.chip .x{margin-left:8px;color:var(--bad);font-weight:800;padding:0 2px}
 .row{display:flex;gap:8px;margin-top:16px}
 .row button{flex:1;height:46px;border-radius:12px;border:1.5px solid var(--line);font-size:16px;font-weight:700;background:#fff;color:var(--ink)}
 .row button.primary{background:var(--ink);color:#fff}
@@ -234,7 +236,9 @@ body.v-sheet .bar #shareBtn{display:block}
 <div class="modal" id="obModal"><div class="panel">
   <h2>한 장 습관표</h2>
   <p class="small" style="margin:0">종이 한 장에 쓰던 습관표를 휴대폰으로. 하루 한 번, 칸만 칠하면 됩니다.</p>
-  <label>늘리고 싶은 습관 <span id="obCount"></span></label>
+  <div style="display:flex;justify-content:flex-end;margin-top:10px"><button class="chip" id="obEdit" style="font-size:13px;padding:6px 10px"></button></div>
+  <p class="small" id="obEditHint" style="display:none;margin:6px 0 0">이름을 누르면 고치고, ✕를 누르면 목록에서 빠져요.</p>
+  <label style="margin-top:4px">늘리고 싶은 습관 <span id="obCount"></span></label>
   <div class="chips" id="obGood"></div>
   <label>줄이고 싶은 습관 (빨간 칸)</label>
   <div class="chips" id="obBad"></div>
@@ -669,23 +673,36 @@ $('shareBtn').onclick=async()=>{
 window.__hanjang={state:()=>S,makeImage,setSel:k=>{SEL=k;render()}};
 
 /* ---------- 처음 쓰는 사람: 습관 고르기 ---------- */
-const OB_G=['일찍 자기','달리기','걷기','근력 운동','스트레칭','독서','일기','물 2L','명상','영어 공부','영양제','정리 정돈'];
-const OB_B=['야식','라면','술','담배','배달 음식','늦잠','과자','유튜브 오래'];
+let OB_G=['일찍 자기','달리기','걷기','근력 운동','스트레칭','독서','일기','물 2L','명상','영어 공부','영양제','정리 정돈'];
+let OB_B=['야식','라면','술','담배','배달 음식','늦잠','과자','유튜브 오래'];
 const OB_N=[['없음',''],['달리기','km'],['걷기','보'],['독서','쪽'],['몸무게','kg'],['공부','시간']];
 let obSel=[], obNum=1;
 function renderOb(){
-  const chip=(name,bad)=>{const on=obSel.some(x=>x.name===name);return `<button class="chip${bad?' bad':''}${on?' on':''}" data-name="${esc(name)}" data-bad="${bad?1:''}">${esc(name)}</button>`};
-  const customG=obSel.filter(x=>!x.bad&&!OB_G.includes(x.name)).map(x=>x.name), customB=obSel.filter(x=>x.bad&&!OB_B.includes(x.name)).map(x=>x.name);
-  $('obGood').innerHTML=[...OB_G,...customG].map(n=>chip(n,false)).join('');
-  $('obBad').innerHTML=[...OB_B,...customB].map(n=>chip(n,true)).join('');
+  const chip=(name,bad)=>{const on=obSel.some(x=>x.name===name);
+    return obEdit?`<button class="chip edit${bad?' bad':''}" data-name="${esc(name)}" data-bad="${bad?1:''}">✎ ${esc(name)}<span class="x" data-x="1">✕</span></button>`
+      :`<button class="chip${bad?' bad':''}${on?' on':''}" data-name="${esc(name)}" data-bad="${bad?1:''}">${esc(name)}</button>`};
+  $('obGood').innerHTML=OB_G.map(n=>chip(n,false)).join('');
+  $('obBad').innerHTML=OB_B.map(n=>chip(n,true)).join('');
+  $('obEdit').textContent=obEdit?'편집 끝':'✎ 목록 고치기';
+  $('obEditHint').style.display=obEdit?'':'none';
   $('obNum').innerHTML=OB_N.map(([n,u],i)=>`<button class="chip${obNum===i?' on':''}" data-i="${i}">${n}${u?` (${u})`:''}</button>`).join('');
   $('obCount').textContent=`· ${obSel.length}/${MAXH}`;
   $('obStart').disabled=!obSel.length;
 }
 function obToggle(name,bad){const i=obSel.findIndex(x=>x.name===name); if(i>=0) obSel.splice(i,1); else{ if(obSel.length>=MAXH){toast(`습관은 ${MAXH}개까지예요`);return} obSel.push({name,bad})} renderOb()}
-['obGood','obBad'].forEach(id=>$(id).addEventListener('click',e=>{const b=e.target.closest('[data-name]'); if(b) obToggle(b.dataset.name,!!b.dataset.bad)}));
+let obEdit=false;
+['obGood','obBad'].forEach(id=>$(id).addEventListener('click',e=>{const b=e.target.closest('[data-name]'); if(!b) return;
+  const name=b.dataset.name, bad=!!b.dataset.bad, L=bad?OB_B:OB_G;
+  if(!obEdit){obToggle(name,bad);return}
+  if(e.target.closest('[data-x]')){L.splice(L.indexOf(name),1); obSel=obSel.filter(x=>x.name!==name); renderOb(); return}
+  const v=(prompt('습관 이름 고치기',name)||'').trim().slice(0,10); if(!v||v===name) return;
+  if(OB_G.includes(v)||OB_B.includes(v)){toast('이미 있는 이름이에요');return}
+  L[L.indexOf(name)]=v; obSel.forEach(x=>{if(x.name===name) x.name=v}); renderOb();
+}));
+$('obEdit').onclick=()=>{obEdit=!obEdit; renderOb()};
 $('obNum').addEventListener('click',e=>{const b=e.target.closest('[data-i]'); if(b){obNum=+b.dataset.i; renderOb()}});
-const obAdd=bad=>{const v=$('obCustom').value.trim(); if(!v) return; if(!obSel.some(x=>x.name===v)) obToggle(v,bad); $('obCustom').value=''};
+const obAdd=bad=>{const v=$('obCustom').value.trim().slice(0,10); if(!v) return; const L=bad?OB_B:OB_G;
+  if(!OB_G.includes(v)&&!OB_B.includes(v)) L.push(v); if(!obSel.some(x=>x.name===v)&&!obEdit) obToggle(v,bad); else renderOb(); $('obCustom').value=''};
 $('obAddG').onclick=()=>obAdd(false); $('obAddB').onclick=()=>obAdd(true);
 $('obStart').onclick=()=>{
   S.habits=[...obSel.filter(x=>!x.bad),...obSel.filter(x=>x.bad)].map(x=>({id:uid('h'),name:x.name,bad:x.bad,spans:[[null,null]]}));
