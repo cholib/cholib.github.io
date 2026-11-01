@@ -28,7 +28,7 @@ header{position:sticky;top:0;z-index:5;background:var(--paper);padding:calc(10px
 .top h1{font-size:24px;margin:0;font-weight:800;letter-spacing:-1px;flex:1;white-space:nowrap;overflow:hidden}
 .top h1 small{font-size:15px;font-weight:600;color:var(--soft);margin-left:4px}
 .top h1 .go{font-size:12px;font-weight:700;border:1.5px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle;background:var(--sheet);cursor:pointer}
-.icon-btn{border:1.5px solid var(--line);background:var(--sheet);border-radius:10px;width:38px;height:38px;font-size:18px;color:var(--ink);flex:none}
+.icon-btn{border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;width:46px;height:46px;font-size:18px;color:var(--ink);flex:none}
 .icon-btn:disabled{opacity:.3}
 .goals{margin:6px 0 0;padding:0;list-style:none}
 .goals li{display:flex;align-items:center;gap:6px;font-size:14.5px;line-height:1.5}
@@ -40,7 +40,7 @@ body.v-today #vToday, body.v-sheet #vSheet, body.v-year #vYear{display:block}
 #vYear{padding:12px 16px 0;max-width:640px;margin:0 auto}
 .ychips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin:0 -16px 6px;padding-left:16px;padding-right:16px;scrollbar-width:none}
 .ychips::-webkit-scrollbar{display:none}
-.ychips .chip{flex:none;padding:6px 11px;font-size:13.5px}
+.ychips .chip{flex:none;min-height:44px;padding:8px 14px;font-size:15px}
 .ychips .chip.on{background:#2da44e;border-color:#2da44e}
 .ychips .chip.bad.on{background:#e5534b;border-color:#e5534b}
 .ychips .chip.num.on{background:#216e39;border-color:#216e39}
@@ -54,17 +54,17 @@ body.v-today #vToday, body.v-sheet #vSheet, body.v-year #vYear{display:block}
 #vToday{padding:12px 16px 0;max-width:560px;margin:0 auto}
 .card{background:var(--sheet);border:2px solid var(--line);border-radius:16px;padding:12px;touch-action:pan-y}
 .hbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.hb{height:48px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:16px;font-weight:700;color:var(--ink);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb{height:58px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:17px;font-weight:700;color:var(--ink);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hb.bad{color:var(--bad);border-color:var(--bad)}
 .hb.on{background:#2da44e;border-color:#2da44e;color:#fff}
 .hb.bad.on{background:#e5534b;border-color:#e5534b;color:#fff}
 .hb:disabled{opacity:.35}
 .nrow{display:flex;align-items:center;gap:8px;margin-top:10px}
 .nrow .nl{flex:1;font-weight:700;color:var(--accent);font-size:15px}
-.nrow button{width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:20px;color:var(--ink)}
-.nrow input{width:92px;height:44px;text-align:center;font:inherit;font-size:18px;font-weight:700;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--accent)}
+.nrow button{width:52px;height:52px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:20px;color:var(--ink)}
+.nrow input{width:88px;height:52px;text-align:center;font:inherit;font-size:18px;font-weight:700;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--accent)}
 .nrow .u{width:30px;color:var(--soft);font-size:13px}
-#memoIn{width:100%;margin-top:10px;height:44px;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px;background:#fff;color:var(--ink)}
+#memoIn{width:100%;margin-top:10px;height:52px;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px;background:#fff;color:var(--ink)}
 .swipe{font-size:11.5px;color:var(--soft);text-align:center;margin-top:8px}
 .mapbox{margin-top:14px;background:var(--sheet);border:2px solid var(--line);border-radius:16px;padding:10px 10px 8px}
 .maphead{display:flex;align-items:baseline;justify-content:space-between;margin:0 2px 6px}
@@ -124,7 +124,7 @@ tfoot .lbl{text-align:right;padding-right:6px}
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:2px solid var(--line);z-index:6;
   display:flex;gap:8px;padding:8px 16px calc(8px + env(safe-area-inset-bottom))}
 body.land .bar{display:none}
-.bar button{flex:1;border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;height:44px;font-size:15px;font-weight:700;color:var(--ink)}
+.bar button{flex:1;border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;height:50px;font-size:15px;font-weight:700;color:var(--ink)}
 .bar button.cur{background:var(--ink);color:var(--paper)}
 .bar #shareBtn{flex:0 0 auto;padding:0 12px;display:none}
 body.v-sheet .bar #shareBtn{display:block}
@@ -137,12 +137,13 @@ body.v-sheet .bar #shareBtn{display:block}
 .panel label{display:block;font-size:13px;color:var(--soft);margin:14px 0 4px;font-weight:600}
 .panel textarea,.panel input[type=text],.panel input[type=number],.panel input[type=date]{width:100%;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:10px;padding:10px;background:#fff;color:var(--ink)}
 .panel textarea{min-height:64px;resize:vertical}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line);border-radius:999px;padding:8px 12px;font-size:15px;background:#fff;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1.5px solid var(--line);border-radius:999px;min-height:48px;padding:10px 16px;font-size:16px;background:#fff;color:var(--ink)}
 .chip.on{background:var(--ink);color:#fff}
 .chip.bad.on{background:var(--bad);border-color:var(--bad)}
 .chip.edit{border-style:dashed}
-.chip .x{margin-left:8px;color:var(--bad);font-weight:800;padding:0 2px}
+.chip.edit{padding-right:4px;display:inline-flex;align-items:center}
+.chip .x{margin-left:6px;color:var(--bad);font-weight:800;display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;border-radius:50%;background:#fbe9e6;font-size:15px}
 .row{display:flex;gap:8px;margin-top:16px}
 .row button{flex:1;height:46px;border-radius:12px;border:1.5px solid var(--line);font-size:16px;font-weight:700;background:#fff;color:var(--ink)}
 .row button.primary{background:var(--ink);color:#fff}
@@ -150,13 +151,13 @@ body.v-sheet .bar #shareBtn{display:block}
 .hl .l1{display:flex;gap:6px;align-items:center}
 .hl .l1 input[type=text]{flex:1;min-width:0}
 .hl .l1 input.unit{flex:0 0 64px}
-.hl button{height:44px;min-width:40px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:14px;color:var(--ink);padding:0 8px}
+.hl button{height:48px;min-width:48px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:14px;color:var(--ink);padding:0 8px}
 .hl .tg.bad{color:var(--bad);border-color:var(--bad)}
 .hl .l2{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12.5px;color:var(--soft)}
 .hl .l2 input[type=date]{width:auto;padding:4px 6px;font-size:13px;border-radius:8px}
 .arch{display:flex;align-items:center;justify-content:space-between;padding:6px 2px;font-size:14px;border-bottom:1px dashed var(--grid)}
 .arch span small{color:var(--soft);margin-left:4px}
-.arch button{height:34px;border-radius:9px;border:1.5px solid var(--line);background:#fff;padding:0 10px;font-size:13px}
+.arch button{height:44px;border-radius:9px;border:1.5px solid var(--line);background:#fff;padding:0 10px;font-size:13px}
 .small{font-size:12.5px;color:var(--soft);line-height:1.5}
 .toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;
   padding:10px 16px;border-radius:999px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30}
@@ -223,7 +224,7 @@ body.v-sheet .bar #shareBtn{display:block}
   <label>습관 (최대 8개 · '줄이기'는 빨간 칸)</label>
   <div id="habitList"></div>
   <button class="chip" id="addHabit" style="margin-top:6px">+ 습관 추가</button>
-  <label>숫자 칸 (최대 2개 · 예: 달리기 km, 독서 쪽)</label>
+  <label>숫자 칸 (최대 3개 · 예: 달리기 km, 독서 쪽)</label>
   <div id="numList"></div>
   <button class="chip" id="addNum" style="margin-top:6px">+ 숫자 칸 추가</button>
   <div id="archBox"></div>
@@ -244,8 +245,9 @@ body.v-sheet .bar #shareBtn{display:block}
   <div class="chips" id="obBad"></div>
   <label>직접 쓰기</label>
   <div class="hl" style="display:flex;gap:6px;border:0;padding:0;background:none"><input type="text" id="obCustom" maxlength="10" placeholder="예: 기타 연습"><button class="chip" id="obAddG" style="flex:none;white-space:nowrap">늘리기</button><button class="chip" id="obAddB" style="flex:none;white-space:nowrap;color:var(--bad);border-color:var(--bad)">줄이기</button></div>
-  <label>숫자로 적을 것 (하나 고르기)</label>
+  <label>숫자로 적을 것 (여러 개 가능 · 최대 3개 · 안 골라도 돼요)</label>
   <div class="chips" id="obNum"></div>
+  <div class="hl" style="display:flex;gap:6px;border:0;padding:0;background:none;margin-top:10px"><input type="text" id="obNumName" maxlength="10" placeholder="직접: 이름 (예: 수영)"><input type="text" id="obNumUnit" maxlength="4" placeholder="단위" style="flex:0 0 74px"><button class="chip" id="obNumAdd" style="flex:none">추가</button></div>
   <p class="small" id="obInstall" style="display:none;margin-top:14px;padding:10px;border:1.5px dashed var(--line);border-radius:10px">📌 <b>홈 화면에 추가</b>해서 쓰세요. 사파리 아래 공유 버튼 → '홈 화면에 추가'. 앱처럼 열리고, 기록도 더 안전하게 보관돼요.</p>
   <p class="small" style="margin-top:10px">기록은 이 휴대폰 안에만 저장되고 어디로도 보내지 않아요. 가입도 필요 없어요. 습관은 나중에 ⚙︎ 설정에서 바꿀 수 있어요.</p>
   <div class="row"><button class="primary" id="obStart" disabled>시작하기</button></div>
@@ -257,7 +259,7 @@ body.v-sheet .bar #shareBtn{display:block}
 (()=>{
 const KEY='hanjang-v2', OLD='hanjang-v1';
 const WK=['일','월','화','수','목','금','토'];
-const MAXH=8, MAXN=2;
+const MAXH=8, MAXN=3;
 const pad=n=>String(n).padStart(2,'0');
 const keyOf=(y,m,d)=>`${y}-${pad(m+1)}-${pad(d)}`;
 const kDate=k=>{const [y,m,d]=k.split('-').map(Number);return new Date(y,m-1,d)};
@@ -335,6 +337,7 @@ function render(){
 }
 
 /* ---------- 오늘 화면 ---------- */
+const stepOf=x=>({'보':1000,'걸음':1000,'m':100,'쪽':10,'분':10,'kcal':50}[x.unit]||1); // −/+ 한 번에 바뀌는 양
 function renderToday(){
   if(SEL>TODAY) SEL=TODAY;
   const dt=kDate(SEL), w=dt.getDay();
@@ -346,8 +349,8 @@ function renderToday(){
     :`<p class="small" style="grid-column:1/-1">이 날 쓰던 습관이 없어요. ⚙︎ 설정에서 추가하세요.</p>`;
   const N=S.nums.filter(x=>activeOn(x,SEL));
   $('numsIn').innerHTML=N.map(x=>`<div class="nrow" data-n="${x.id}"><span class="nl">${esc(x.name)}</span>
-    <button data-step="-1" aria-label="빼기">−</button><input inputmode="decimal" value="${fmtNum(r.n[x.id])}" placeholder="0"><span class="u">${esc(x.unit)}</span>
-    <button data-step="1" aria-label="더하기">+</button></div>`).join('');
+    <button data-step="-${stepOf(x)}" aria-label="빼기">−</button><input inputmode="decimal" value="${fmtNum(r.n[x.id])}" placeholder="0"><span class="u">${esc(x.unit)}</span>
+    <button data-step="${stepOf(x)}" aria-label="더하기">+</button></div>`).join('');
   $('memoIn').value=r.memo||'';
   renderMap();
 }
@@ -675,8 +678,8 @@ window.__hanjang={state:()=>S,makeImage,setSel:k=>{SEL=k;render()}};
 /* ---------- 처음 쓰는 사람: 습관 고르기 ---------- */
 let OB_G=['일찍 자기','달리기','걷기','근력 운동','스트레칭','독서','일기','물 2L','명상','영어 공부','영양제','정리 정돈'];
 let OB_B=['야식','라면','술','담배','배달 음식','늦잠','과자','유튜브 오래'];
-const OB_N=[['없음',''],['달리기','km'],['걷기','보'],['독서','쪽'],['몸무게','kg'],['공부','시간']];
-let obSel=[], obNum=1;
+let OB_N=[['달리기','km'],['걷기','보'],['독서','쪽'],['몸무게','kg'],['공부','시간'],['수면','시간']];
+let obSel=[], obNum=[0];
 function renderOb(){
   const chip=(name,bad)=>{const on=obSel.some(x=>x.name===name);
     return obEdit?`<button class="chip edit${bad?' bad':''}" data-name="${esc(name)}" data-bad="${bad?1:''}">✎ ${esc(name)}<span class="x" data-x="1">✕</span></button>`
@@ -685,7 +688,7 @@ function renderOb(){
   $('obBad').innerHTML=OB_B.map(n=>chip(n,true)).join('');
   $('obEdit').textContent=obEdit?'편집 끝':'✎ 목록 고치기';
   $('obEditHint').style.display=obEdit?'':'none';
-  $('obNum').innerHTML=OB_N.map(([n,u],i)=>`<button class="chip${obNum===i?' on':''}" data-i="${i}">${n}${u?` (${u})`:''}</button>`).join('');
+  $('obNum').innerHTML=OB_N.map(([n,u],i)=>`<button class="chip${obNum.includes(i)?' on':''}" data-i="${i}">${esc(n)}${u?` (${esc(u)})`:''}</button>`).join('');
   $('obCount').textContent=`· ${obSel.length}/${MAXH}`;
   $('obStart').disabled=!obSel.length;
 }
@@ -700,13 +703,17 @@ let obEdit=false;
   L[L.indexOf(name)]=v; obSel.forEach(x=>{if(x.name===name) x.name=v}); renderOb();
 }));
 $('obEdit').onclick=()=>{obEdit=!obEdit; renderOb()};
-$('obNum').addEventListener('click',e=>{const b=e.target.closest('[data-i]'); if(b){obNum=+b.dataset.i; renderOb()}});
+$('obNum').addEventListener('click',e=>{const b=e.target.closest('[data-i]'); if(!b) return; const i=+b.dataset.i;
+  if(obNum.includes(i)) obNum=obNum.filter(x=>x!==i); else { if(obNum.length>=MAXN){toast(`숫자 칸은 ${MAXN}개까지예요`);return} obNum.push(i) } renderOb()});
+$('obNumAdd').onclick=()=>{const n=$('obNumName').value.trim().slice(0,10), u=$('obNumUnit').value.trim().slice(0,4); if(!n){$('obNumName').focus();return}
+  OB_N.push([n,u]); if(obNum.length<MAXN) obNum.push(OB_N.length-1); else toast(`숫자 칸은 ${MAXN}개까지예요`);
+  $('obNumName').value=''; $('obNumUnit').value=''; renderOb()};
 const obAdd=bad=>{const v=$('obCustom').value.trim().slice(0,10); if(!v) return; const L=bad?OB_B:OB_G;
   if(!OB_G.includes(v)&&!OB_B.includes(v)) L.push(v); if(!obSel.some(x=>x.name===v)&&!obEdit) obToggle(v,bad); else renderOb(); $('obCustom').value=''};
 $('obAddG').onclick=()=>obAdd(false); $('obAddB').onclick=()=>obAdd(true);
 $('obStart').onclick=()=>{
   S.habits=[...obSel.filter(x=>!x.bad),...obSel.filter(x=>x.bad)].map(x=>({id:uid('h'),name:x.name,bad:x.bad,spans:[[null,null]]}));
-  const [n,u]=OB_N[obNum]; S.nums=n&&u?[{id:uid('n'),name:n,unit:u,spans:[[null,null]]}]:[];
+  S.nums=obNum.map(i=>({id:uid('n'),name:OB_N[i][0],unit:OB_N[i][1],spans:[[null,null]]}));
   save(); $('obModal').classList.remove('open'); render(); toast('시작! 오늘 한 것을 눌러 보세요');
 };
 if(FIRST){
